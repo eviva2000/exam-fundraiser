@@ -1,0 +1,27 @@
+{
+  "name": "exam-fundraiser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "npm-run-all --parallel react-sass landing-sass",
+    "react-sass": "node-sass scss/admin/admin-main.scss react-dashboard/src/react-style.css -w",
+    "landing-sass": "node-sass scss/landing/landing-main.scss landing-page/landing-style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RytisDr/exam-fundraiser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RytisDr/exam-fundraiser/issues"
+  },
+  "homepage": "https://github.com/RytisDr/exam-fundraiser#readme",
+  "devDependencies": {
+    "node-sass": "^4.10.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
