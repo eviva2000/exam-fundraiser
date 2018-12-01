@@ -7,8 +7,8 @@ import MaterialDonations from "./MaterialDonations.jsx";
 //This is the parent Component
 
 export default class Dashboard extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { data: [] }; //Current state returns an empty array
   }
 
@@ -33,16 +33,11 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.state.data.map(function(item, index) {
-            return <h1>{item.name}</h1>;
-          })}
-        </ul>
         <section id="totalMoney">
           <TotalMoney />
         </section>
         <section id="donators">
-          <Donators />
+          <Donators data={this.state.data} index={this.state.data.index} />
         </section>
         <section id="moneyDaily">
           <MoneyDaily />
