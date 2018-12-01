@@ -34,7 +34,7 @@ export default class Dashboard extends Component {
     return (
       <div>
         <section id="totalMoney">
-          <TotalMoney />
+          <TotalMoney data={this.state.data} />
         </section>
         <section id="donators">
           <Donators data={this.state.data} index={this.state.data.index} />

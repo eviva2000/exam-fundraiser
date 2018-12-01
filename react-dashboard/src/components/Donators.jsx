@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import DonatorListItem from "./DonatorListItem.jsx";
 
+//Get properties from the parent Dashboard, maps through the array and returns a list of amounts and names.
 export default class Donators extends Component {
   render() {
     return (
