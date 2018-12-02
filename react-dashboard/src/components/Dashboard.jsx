@@ -32,7 +32,7 @@ export default class Dashboard extends Component {
   //Here we render all the children components.
   render() {
     return (
-      <div>
+      <div id="dashboard">
         <section id="totalMoney">
           <TotalMoney data={this.state.data} />
         </section>
@@ -43,7 +43,7 @@ export default class Dashboard extends Component {
           <MoneyDaily />
         </section>
         <section id="materialDonations">
-          <MaterialDonations />
+          <MaterialDonations className="container" data={this.state.data} />
         </section>
       </div>
     );

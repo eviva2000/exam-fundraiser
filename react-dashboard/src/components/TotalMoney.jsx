@@ -12,6 +12,11 @@ export default class TotalMoney extends Component {
       return a + b;
     }
 
-    return <h1>{sum}</h1>;
+    return (
+      <div>
+        <h1>Total Amount of Money Donated</h1>
+        <h1>{sum}</h1>
+      </div>
+    );
   }
 }
