@@ -9,7 +9,10 @@ import MaterialDonations from "./MaterialDonations.jsx";
 export default class Dashboard extends Component {
   constructor() {
     super();
-    this.state = { data: [] }; //Current state returns an empty array
+    this.state = {
+      user: null,
+      data: []
+    }; //Current state returns an empty array
   }
 
   //This lifecycle method usually renders once after the component has mounted.
@@ -17,15 +20,17 @@ export default class Dashboard extends Component {
 
   componentDidMount() {
     setInterval(() => {
-      // Setting the interval makes sure this state updates and fethes data after the certain interval.
-      fetch(
-        "https://5bffd9ef0296210013dc7e55.mockapi.io/userinfo?fbclid=IwAR0NhN7G-StoO5qVzhjNS8uGoeBNXqawSUehT9E_QzNSdoF0NktGrMVR4G0"
-      ).then(res => {
-        res.json().then(result => {
-          console.log(result);
-          this.setState({ data: result });
+      if (this.state.user) {
+        // Setting the interval makes sure this state updates and fethes data after the certain interval.
+        fetch(
+          "https://5bffd9ef0296210013dc7e55.mockapi.io/userinfo?fbclid=IwAR0NhN7G-StoO5qVzhjNS8uGoeBNXqawSUehT9E_QzNSdoF0NktGrMVR4G0"
+        ).then(res => {
+          res.json().then(result => {
+            console.log(result);
+            this.setState({ data: result });
+          });
         });
-      });
+      }
     }, 2000);
   }
 
