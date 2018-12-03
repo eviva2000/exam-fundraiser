@@ -1,0 +1,159 @@
+$font: "Poppins", sans-serif;
+$red-color: #de2235;
+$yellow-color: #fcc60e;
+$dark-blue-color: #1b2440;
+$light-blue: #94d3f2;
+body {
+  font-family: $font;
+  font-weight: 300;
+}
+.modal {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10%;
+  // z-index: 100;
+  .closebtn {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    cursor: pointer;
+  }
+}
+.modal p {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.selection-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.select-money,
+.select-material {
+  width: 35%;
+  height: 40vh;
+  border: 1px grey solid;
+  border-radius: 10%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5%;
+  button {
+    height: 40px;
+    margin-top: 50%;
+    background: $yellow-color;
+    border: none;
+    cursor: pointer;
+    border-radius: 2em;
+    font-family: $font;
+    color: $red-color;
+    font-size: 0.8em;
+    width: 67%;
+  }
+}
+
+.material-container,
+.money-container {
+  // display: flex;
+  background-color: white;
+  border: $light-blue 1px solid;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10%;
+}
+.closebtn,
+.closebtn2 {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  cursor: pointer;
+}
+#userInfoForm1,
+#userInfoForm2 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+  font-family: $font;
+  font-weight: 100;
+  .input {
+    grid-template-columns: 1fr 2fr;
+    grid-column: 3/9;
+    height: 51px;
+    margin-bottom: 8px;
+    position: relative;
+
+    label {
+      position: absolute;
+      width: 30%;
+      z-index: 100;
+      font-size: 16px;
+      top: 25%;
+    }
+    input,
+    textarea {
+      position: absolute;
+      left: 25%;
+      width: 35%;
+      height: 39px;
+      border: 1px solid grey;
+      // border-right: solid 6px #c4c4c4;
+      padding: 0 0 0 15px;
+    }
+    textarea {
+      top: 5em;
+    }
+
+    .required {
+      position: absolute;
+      color: rgba(255, 0, 0, 0.534);
+      top: 5%;
+      left: 23%;
+    }
+  }
+  input[type="submit"] {
+    height: 40px;
+    width: 7em;
+    grid-column: 3/4;
+    margin-top: 60%;
+    background: $yellow-color;
+    border: none;
+    cursor: pointer;
+    border-radius: 2em;
+    font-family: $font;
+    color: $red-color;
+    font-size: 1em;
+  }
+  :nth-child(3) {
+    margin-top: 0%;
+  }
+}
+
+#moneydonation {
+  margin-left: 20%;
+  .amount-selection {
+    padding-top: 3em;
+    font-size: 1.2em;
+  }
+}
+#instrumentdonation {
+  margin-left: 20%;
+  .material-selection {
+    padding-top: 3em;
+    font-size: 1.2em;
+  }
+}
+
+.experiment {
+  position: absolute;
+  img {
+    width: 5%;
+    height: auto;
+  }
+}
