@@ -51,6 +51,7 @@ function addUserInfo1() {
 
   if (amount === "other") {
     userInfo.amount = moneyForm.elements.custome.value;
+    document.querySelector('input[name="custome"]').style.display = "none";
   }
   if (!comment) {
     console.log("none");

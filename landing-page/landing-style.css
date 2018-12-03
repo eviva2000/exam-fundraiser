@@ -136,28 +136,7 @@ body {
     font-size: 1.2em; }
 
 .experiment {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-column: 2; }
-  .experiment input,
-  .experiment button {
-    border: 0; }
-    .experiment input:focus,
-    .experiment button:focus {
-      outline: none; }
-  .experiment button {
-    padding: 0.5em 0.75em;
-    background: #ef8fdf; }
-  .experiment input {
-    padding: 0.5em 0.75em;
-    position: relative; }
-
-svg {
-  width: 2.7em;
-  height: auto; }
-
-.exper2 {
-  display: grid;
-  grid-template-columns: 1fr minmax(auto, 30em) 1fr;
-  background: linear-gradient(135deg, #26d9d9, #105070);
-  justify-items: stretch; }
+  position: absolute; }
+  .experiment img {
+    width: 5%;
+    height: auto; }

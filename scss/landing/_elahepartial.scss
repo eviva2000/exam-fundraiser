@@ -149,34 +149,11 @@ body {
     font-size: 1.2em;
   }
 }
-.experiment {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-column: 2;
-  input,
-  button {
-    border: 0;
-    &:focus {
-      outline: none;
-    }
-  }
-  button {
-    padding: 0.5em 0.75em;
-    background: hsl(310, 75%, 75%);
-  }
-  input {
-    padding: 0.5em 0.75em;
-    position: relative;
-  }
-}
-svg {
-  width: 2.7em;
-  height: auto;
-}
-.exper2 {
-  display: grid;
-  grid-template-columns: 1fr minmax(auto, 30em) 1fr;
 
-  background: linear-gradient(135deg, hsl(180, 70%, 50%), hsl(200, 75%, 25%));
-  justify-items: stretch;
+.experiment {
+  position: absolute;
+  img {
+    width: 5%;
+    height: auto;
+  }
 }
