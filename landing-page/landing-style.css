@@ -1,0 +1,161 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300; }
+
+.modal {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10%; }
+  .modal .closebtn {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    cursor: pointer; }
+
+.modal p {
+  text-align: center; }
+
+.hidden {
+  display: none; }
+
+.selection-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; }
+
+.select-money,
+.select-material {
+  width: 35%;
+  height: 40vh;
+  border: 1px grey solid;
+  border-radius: 10%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5%; }
+  .select-money button,
+  .select-material button {
+    height: 40px;
+    margin-top: 50%;
+    background: #fcc60e;
+    border: none;
+    cursor: pointer;
+    border-radius: 2em;
+    font-family: "Poppins", sans-serif;
+    color: #de2235;
+    font-size: 0.8em;
+    width: 67%; }
+
+.material-container,
+.money-container {
+  background-color: white;
+  border: #94d3f2 1px solid;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10%; }
+  .material-container .closebtn,
+  .money-container .closebtn {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    cursor: pointer; }
+  .material-container #userInfoForm,
+  .money-container #userInfoForm {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100; }
+    .material-container #userInfoForm .input,
+    .money-container #userInfoForm .input {
+      grid-template-columns: 1fr 2fr;
+      grid-column: 3/9;
+      height: 51px;
+      margin-bottom: 8px;
+      position: relative; }
+      .material-container #userInfoForm .input label,
+      .money-container #userInfoForm .input label {
+        position: absolute;
+        width: 30%;
+        z-index: 100;
+        font-size: 16px;
+        top: 25%; }
+      .material-container #userInfoForm .input input,
+      .material-container #userInfoForm .input textarea,
+      .money-container #userInfoForm .input input,
+      .money-container #userInfoForm .input textarea {
+        position: absolute;
+        left: 25%;
+        width: 35%;
+        height: 39px;
+        border: 1px solid grey;
+        padding: 0 0 0 15px; }
+      .material-container #userInfoForm .input textarea,
+      .money-container #userInfoForm .input textarea {
+        top: 5em; }
+      .material-container #userInfoForm .input .required,
+      .money-container #userInfoForm .input .required {
+        position: absolute;
+        color: rgba(255, 0, 0, 0.534);
+        top: 5%;
+        left: 23%; }
+    .material-container #userInfoForm input[type="submit"],
+    .money-container #userInfoForm input[type="submit"] {
+      height: 40px;
+      width: 7em;
+      grid-column: 3/4;
+      margin-top: 60%;
+      background: #fcc60e;
+      border: none;
+      cursor: pointer;
+      border-radius: 2em;
+      font-family: "Poppins", sans-serif;
+      color: #de2235;
+      font-size: 1em; }
+    .material-container #userInfoForm :nth-child(3),
+    .money-container #userInfoForm :nth-child(3) {
+      margin-top: 0%; }
+
+#moneydonation {
+  margin-left: 20%; }
+  #moneydonation .amount-selection {
+    padding-top: 3em;
+    font-size: 1.2em; }
+
+#instrumentdonation {
+  margin-left: 20%; }
+  #instrumentdonation .material-selection {
+    padding-top: 3em;
+    font-size: 1.2em; }
+
+.experiment {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column: 2; }
+  .experiment input,
+  .experiment button {
+    border: 0; }
+    .experiment input:focus,
+    .experiment button:focus {
+      outline: none; }
+  .experiment button {
+    padding: 0.5em 0.75em;
+    background: #ef8fdf; }
+  .experiment input {
+    padding: 0.5em 0.75em;
+    position: relative; }
+
+svg {
+  width: 2.7em;
+  height: auto; }
+
+.exper2 {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 30em) 1fr;
+  background: linear-gradient(135deg, #26d9d9, #105070);
+  justify-items: stretch; }

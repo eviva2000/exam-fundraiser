@@ -5,9 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="landing-style.css" />
-    <title>Document</title>
+    <title>Fundraiser-project</title>
   </head>
   <body>
+    <div class="selection-wrapper">
+      <section class="select-money"><button>Donate money</button></section>
+      <section class="select-material">
+        <button>Donate materials</button>
+      </section>
+    </div>
+
+    <!--
+      <div class="modal hidden">
+        <div class="closebtn"><span>&#10005;</span></div>
+
+        <p>Thank you message</p>
+      </div>
+    -->
+
+    <section class="money-container hidden">
+      <div class="closebtn"><span>&#10005;</span></div>
+      <form id="moneydonation">
+        <div class="amount-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="amount"
+            value="100"
+            id="a1"
+          />
+          <label for="a1"><span class="radio">100 DK.</span> </label>
+        </div>
+        <div class="amount-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="amount"
+            value="200"
+            id="a2"
+          />
+          <label for="a2"><span class="radio">200 DK.</span> </label>
+        </div>
+        <div class="amount-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="amount"
+            value="400"
+            id="a3"
+          />
+          <label for="a3"><span class="radio">400 DK</span> </label>
+        </div>
+        <div class="amount-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="amount"
+            value="other"
+            id="a4"
+          />
+          <label for="a4"><span class="radio">Other amounts</span> </label>
+        </div>
+
+        <input type="number" name="custome" value="" class="custome " /><br />
+      </form>
+      <form id="userInfoForm1">
+        <div class="input">
+          <label>Your name</label> <span class="required">*</span>
+
+          <div class="experiment">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full name"
+              style="position:inherit;left:0;height: initial;width: initial;"
+              required
+            />
+            <button type="button">
+              <svg viewBox="0 0 20 20">
+                <path
+                  d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM6.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm7 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2.16 3a6 6 0 0 1-11.32 0h11.32z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="input">
+          <label>Your email</label> <span class="required">*</span>
+          <input type="email" name="email" placeholder="Email" required />
+          <span class="correct"></span>
+        </div>
+        <div class="input">
+          <label>Leave a comment</label>
+          <textarea placeholder="I donate because ..."></textarea>
+        </div>
+
+        <input type="submit" name="submit" value="Donate" />
+      </form>
+    </section>
+    <!-- money container ends -->
+    <section class="material-container hidden">
+      <div class="closebtn"><span>&#10005;</span></div>
+
+      <form id="instrumentdonation">
+        <div class="material-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="instrument"
+            value="guitar"
+            id="m1"
+          />
+          <label for="m1"><span class="radio">Guitar</span> </label>
+        </div>
+        <div class="material-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="instrument"
+            value="saxofone"
+            id="m2"
+          />
+          <label for="m2"><span class="radio">Saxofone</span> </label>
+        </div>
+        <div class="material-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="instrument"
+            value="compositions"
+            id="m3"
+          />
+          <label for="m3"><span class="radio">Compositions</span> </label>
+        </div>
+        <div class="material-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="instrument"
+            value="music-lessons"
+            id="m4"
+          />
+          <label for="m4"><span class="radio">Music lessons</span> </label>
+        </div>
+        <div class="material-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="instrument"
+            value="used-instrument"
+            id="m5"
+          />
+          <label for="m5"><span class="radio">Used instrument</span> </label>
+        </div>
+      </form>
+
+      <form id="userInfoForm2">
+        <div class="input">
+          <label>Your name</label> <span class="required">*</span>
+          <input type="text" name="name" placeholder="Full name" required />
+        </div>
+
+        <div class="input">
+          <label>Your email</label> <span class="required">*</span>
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <div class="input">
+          <label>Leave a comment</label>
+          <textarea placeholder="I donate because ..."></textarea>
+        </div>
+
+        <input type="submit" name="submit" value="Donate" />
+      </form>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
