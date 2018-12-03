@@ -47,11 +47,7 @@ Sass documentation, for cool stuff: https://sass-lang.com/guide
 
 ### General note on css specificity
 
-<<<<<<< HEAD
 Avoid using global selectors (p{}, body{} etc.). If you want to style all _p_ tags inside a _section_ that you are working on, give that _section_ an id and then select _p_ tags after it:
-=======
-Avoid using global selectors (p{}, body{} etc.). If you want to style all <p> tags inside a <section> that you are working on, give that <section> an id and then select <p> tags after it:
->>>>>>> elahebranch
 
 ```
 #mysection p{}

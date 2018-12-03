@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Guitars from "./Guitars.jsx";
+import Violins from "./Violins.jsx";
 import Saxophones from "./Saxophones.jsx";
 import CompositionBooks from "./CompositionBooks.jsx";
 import Lessons from "./Lessons.jsx";
@@ -8,7 +8,8 @@ export default class MaterialDonations extends Component {
   render() {
     return (
       <div>
-        <Guitars />
+        <h1>Donated Material Support</h1>
+        <Violins materials={this.props.materials} />
         <Saxophones />
         <CompositionBooks />
         <Lessons />
