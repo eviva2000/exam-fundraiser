@@ -6,7 +6,9 @@ let moneyContainer = document.querySelector(".money-container");
 let materialContainer = document.querySelector(".material-container");
 let materialbtn = document.querySelector(".select-material button");
 let closeBtn = document.querySelector(".closebtn");
-const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/userinfo";
+let closeBtn2 = document.querySelector(".closebtn2");
+const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
+const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
 // showing money donation modal //
@@ -25,7 +27,7 @@ materialbtn.addEventListener("click", function() {
   materialContainer.style.display = "flex";
 });
 // closing the material modal
-closeBtn.addEventListener("click", function() {
+closeBtn2.addEventListener("click", function() {
   materialContainer.style.display = "none";
   console.log("yess");
 });
@@ -39,16 +41,20 @@ userInfoForm1.addEventListener("submit", e => {
 });
 function addUserInfo1() {
   let amount = document.querySelector('input[name="amount"]:checked').value;
-
+  let comment = document.querySelector("#userInfoForm1 textarea").value;
   const userInfo = {
     name: userInfoForm1.elements.name.value,
     email: userInfoForm1.elements.email.value,
-    amount: document.querySelector('input[name="amount"]:checked').value
-    // musicMaterial: document.querySelector('input[name="instrument"]:checked').value
+    amount: document.querySelector('input[name="amount"]:checked').value,
+    comment: comment
   };
 
   if (amount === "other") {
     userInfo.amount = moneyForm.elements.custome.value;
+  }
+  if (!comment) {
+    console.log("none");
+    comment: "none";
   }
 
   fetch(endpoint, {
@@ -79,7 +85,7 @@ function addUserInfo2() {
       .value
   };
 
-  fetch(endpoint, {
+  fetch(endpoint2, {
     method: "post",
     body: JSON.stringify(userInfo),
     headers: {
@@ -91,7 +97,7 @@ function addUserInfo2() {
     .then(d => {});
 }
 function clearForm() {
-  userInfoForm.elements.name.value = "";
-  userInfoForm.elements.email.value = "";
+  userInfoForm1.elements.name.value = "";
+  userInfoForm1.elements.email.value = "";
   moneyForm.elements.amount.value = "";
 }
