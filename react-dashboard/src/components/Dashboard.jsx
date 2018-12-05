@@ -10,8 +10,9 @@ export default class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
-      user: null,
-      data: []
+      user: true,
+      data: [],
+      materials: []
     }; //Current state returns an empty array
 
     this.authorize = this.authorize.bind(this); //bind this state to authorize function so that these values could be read/changed in authorize function
@@ -25,10 +26,18 @@ export default class Dashboard extends Component {
       if (this.state.user) {
         // Setting the interval makes sure this state updates and fethes data after the certain interval.
         fetch(
-          "https://5bffd9ef0296210013dc7e55.mockapi.io/userinfo?fbclid=IwAR0NhN7G-StoO5qVzhjNS8uGoeBNXqawSUehT9E_QzNSdoF0NktGrMVR4G0"
+          "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
         ).then(res => {
           res.json().then(result => {
             this.setState({ data: result });
+          });
+        });
+        fetch(
+          "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
+        ).then(res => {
+          res.json().then(result => {
+            console.log(result);
+            this.setState({ materials: result });
           });
         });
       }

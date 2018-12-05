@@ -8,7 +8,8 @@ export default class MaterialDonations extends Component {
   render() {
     return (
       <div>
-        <Violins />
+        <h1>Donated Material Support</h1>
+        <Violins materials={this.props.materials} />
         <Saxophones />
         <CompositionBooks />
         <Lessons />
