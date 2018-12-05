@@ -34,6 +34,7 @@ export default class Dashboard extends Component {
       }
     }, 2000);
   }
+  //authorize the user according to input details (firebase)
   authorize(e) {
     e.preventDefault();
     let emailValue = document.getElementById("email").value;
@@ -42,10 +43,10 @@ export default class Dashboard extends Component {
       .auth()
       .signInWithEmailAndPassword(emailValue, pwdValue)
       .then(res => {
-        this.setState({ user: emailValue });
+        this.setState({ user: res });
       })
       .catch(error => {
-        return null;
+        console.log(error);
       });
   }
   //Here we render all the children components.
