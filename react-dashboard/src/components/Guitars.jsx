@@ -8,10 +8,9 @@ export default class Guitars extends Component {
     let instrumentArray = this.props.materials.map(
       instrument => instrument.musicMaterial
     );
-    console.log(instrumentArray);
+
     let guitarArray = instrumentArray.filter(guitar => guitar === "guitar");
 
-    console.log(guitarArray);
     let number = guitarArray.length;
     for (let i = 0; i < number; i++) {
       images.push(
@@ -19,7 +18,7 @@ export default class Guitars extends Component {
       );
     }
     return (
-      <div>
+      <div margin={15}>
         {images}
         <h2 className="instrumentNumber">Donated Guitars: {number}</h2>
       </div>

@@ -8,12 +8,11 @@ export default class CompositionBooks extends Component {
     let instrumentArray = this.props.materials.map(
       instruments => instruments.musicMaterial
     );
-    console.log(instrumentArray);
+
     let compositionArray = instrumentArray.filter(
       composition => composition === "compositions"
     );
 
-    console.log(compositionArray);
     let number = compositionArray.length;
     for (let i = 0; i < number; i++) {
       images.push(
