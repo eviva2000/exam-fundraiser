@@ -80,7 +80,11 @@ export default class Dashboard extends Component {
             <TotalMoney data={this.state.data} />
           </section>
           <section id="donators">
+<<<<<<< HEAD
             <Donators data={this.state.data} />
+=======
+            <Donators data={this.state.data} index={this.state.data.index} />
+>>>>>>> master
           </section>
 
           <section id="materialDonations">

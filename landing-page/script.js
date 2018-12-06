@@ -12,7 +12,11 @@ const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
 const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
+<<<<<<< HEAD
 
+=======
+let temp = document.querySelector("template").content;
+>>>>>>> master
 // showing money donation modal //
 moneybtn.addEventListener("click", function() {
   moneyContainer.classList.remove("hidden");
@@ -123,3 +127,28 @@ function clearForm() {
   document.querySelector('input[name="profile"]').value = "";
   document.querySelector('input[name="hours"]').value;
 }
+
+//Adding donators to the corresponding section
+function addingDonators() {
+  fetch(endpoint)
+    .then(res => res.json())
+    .then(showDonators);
+}
+function showDonators(donatorlist) {
+  donatorlist.forEach(donator => {
+    console.log(donator);
+    let clone = temp.cloneNode(true);
+    let myDate = donator.date;
+    let newDate = myDate.substr(1, 9);
+    // let realdate = newDate.split(""); //convert 'newDate' to array
+    // realdate = realdate.reverse(); //reverse 'newDate' order
+    // realdate = realdate.join("");
+    clone.querySelector("article p").textContent = `${
+      donator.name
+    } donates at ${newDate}`;
+
+    console.log(newDate);
+    document.querySelector(".pdonators").appendChild(clone);
+  });
+}
+addingDonators();
