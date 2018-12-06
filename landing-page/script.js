@@ -13,10 +13,16 @@ const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 let temp = document.querySelector("template").content;
 >>>>>>> master
+=======
+
+let temp = document.querySelector("template").content;
+
+>>>>>>> 5dbb3af75122d9eb646ecd721f22742aeb92fa7b
 // showing money donation modal //
 moneybtn.addEventListener("click", function() {
   moneyContainer.classList.remove("hidden");
