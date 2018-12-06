@@ -10,7 +10,7 @@ export default class MaterialDonations extends Component {
       <div>
         <h1>Donated Material Support</h1>
         <Violins materials={this.props.materials} />
-        <Saxophones />
+        <Saxophones materials={this.props.materials} />
         <CompositionBooks />
         <Lessons />
       </div>
