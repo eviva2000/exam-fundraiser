@@ -6,7 +6,7 @@ export default class MoneyDaily extends Component {
   render() {
     let dateArray = this.props.data.map(item => ({
       amount: Number(item.amount),
-      date: item.date.slice(0, 10)
+      date: item.date.toString().slice(0, 10)
     }));
 
     let nested = d3
@@ -17,8 +17,10 @@ export default class MoneyDaily extends Component {
         let dateType = parseTime(d.date);
         let formatTime = d3.timeFormat("%d-%m-%Y");
         let formatedDate = formatTime(dateType);
-
-        return formatedDate;
+        let parseAgain = d3.timeParse("%d-%m-%Y");
+        let parsedAgain = parseAgain(formatedDate);
+        console.log(typeof parsedAgain);
+        return parsedAgain;
       })
       .rollup(a => {
         return d3.sum(a, d => {

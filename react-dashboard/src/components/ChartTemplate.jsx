@@ -4,21 +4,18 @@ import LineChart from "react-linechart";
 
 export default class ChartTemplate extends Component {
   render() {
-    // let points = this.props.data.map(item => ({
-    //   x: item.key,
-    //   y: item.value
-    // }));
     let data = [
       {
         color: "red",
         points: this.props.data.map(item => ({
-          x: item.key,
-          y: item.value
+          y: item.value,
+          x: item.key
         }))
       }
     ];
 
     console.table(data);
+
     return (
       <div>
         <div className="App">

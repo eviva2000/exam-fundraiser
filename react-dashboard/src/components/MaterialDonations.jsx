@@ -16,7 +16,7 @@ export default class MaterialDonations extends Component {
         <Guitars materials={this.props.materials} />
 
         <CompositionBooks materials={this.props.materials} />
-        <Lessons />
+        <Lessons materials={this.props.materials} />
       </div>
     );
   }
