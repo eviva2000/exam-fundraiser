@@ -60,10 +60,6 @@ export default class Dashboard extends Component {
   }
   //Here we render all the children components.
   render() {
-<<<<<<< HEAD
-=======
-
->>>>>>> dcb23d53eeabbf171ff3ac1999ed621c32704bec
     if (!this.state.user) {
       return (
         <form method="get">
@@ -77,7 +73,6 @@ export default class Dashboard extends Component {
     } else {
       return (
         <div id="dashboard">
-<<<<<<< HEAD
           <section id="moneyDaily">
             <MoneyDaily data={this.state.data} />
           </section>
@@ -87,6 +82,7 @@ export default class Dashboard extends Component {
           <section id="donators">
             <Donators data={this.state.data} index={this.state.data.index} />
           </section>
+
           <section id="materialDonations">
             <MaterialDonations
               className="container"
@@ -96,27 +92,5 @@ export default class Dashboard extends Component {
         </div>
       );
     }
-=======
-        <section id="moneyDaily">
-          <MoneyDaily data={this.state.data} />
-        </section>
-        <section id="totalMoney">
-          <TotalMoney data={this.state.data} />
-        </section>
-        <section id="donators">
-          <Donators data={this.state.data} index={this.state.data.index} />
-        </section>
-
-        <section id="materialDonations">
-          <MaterialDonations
-            className="container"
-            materials={this.state.materials}
-          />
-        </section>
-      </div>
-      );
-    }
-
->>>>>>> dcb23d53eeabbf171ff3ac1999ed621c32704bec
   }
 }
