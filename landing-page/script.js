@@ -7,10 +7,12 @@ let materialContainer = document.querySelector(".material-container");
 let materialbtn = document.querySelector(".select-material button");
 let closeBtn = document.querySelector(".closebtn");
 let closeBtn2 = document.querySelector(".closebtn2");
+const additionalLessonForm = document.querySelector("#lessonInput");
 const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
 const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
+
 // showing money donation modal //
 moneybtn.addEventListener("click", function() {
   moneyContainer.classList.remove("hidden");
@@ -31,6 +33,13 @@ closeBtn2.addEventListener("click", function() {
   materialContainer.style.display = "none";
   console.log("yess");
 });
+
+// Opens the additional input for lessons
+document.querySelector("#m4").addEventListener("click", function() {
+  additionalLessonForm.classList.remove("hidden");
+  console.log("yess");
+});
+
 // ADDING money donation to database//
 let userInfoForm1 = document.querySelector("#userInfoForm1");
 userInfoForm1.addEventListener("submit", e => {
@@ -85,6 +94,8 @@ function addUserInfo2() {
     email: userInfoForm2.elements.email.value,
     musicMaterial: document.querySelector('input[name="instrument"]:checked')
       .value,
+    profile: document.querySelector('input[name="profile"]').value,
+    hours: document.querySelector('input[name="hours"]').value,
     comment: comment2
   };
   if (!comment2) {
@@ -107,4 +118,8 @@ function clearForm() {
   userInfoForm1.elements.name.value = "";
   userInfoForm1.elements.email.value = "";
   moneyForm.elements.amount.value = "";
+  userInfoForm2.elements.name.value = "";
+  userInfoForm2.elements.email.value = "";
+  document.querySelector('input[name="profile"]').value = "";
+  document.querySelector('input[name="hours"]').value;
 }
