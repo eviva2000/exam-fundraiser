@@ -79,12 +79,18 @@ userInfoForm2.addEventListener("submit", e => {
   // clearForm();
 });
 function addUserInfo2() {
+  let comment2 = document.querySelector("#userInfoForm2 textarea").value;
   const userInfo = {
     name: userInfoForm2.elements.name.value,
     email: userInfoForm2.elements.email.value,
     musicMaterial: document.querySelector('input[name="instrument"]:checked')
-      .value
+      .value,
+    comment: comment2
   };
+  if (!comment2) {
+    console.log("none");
+    comment: "none";
+  }
 
   fetch(endpoint2, {
     method: "post",
