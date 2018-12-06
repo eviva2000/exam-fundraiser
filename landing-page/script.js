@@ -108,3 +108,37 @@ function clearForm() {
   userInfoForm1.elements.email.value = "";
   moneyForm.elements.amount.value = "";
 }
+/// Fetch endpoint (via get method) and show money collected
+function fetchAmounts() {
+  fetch(endpoint)
+    .then(e => e.json())
+    .then(res => {
+      progressBar(res);
+    });
+}
+function progressBar(data) {
+  //Goal
+  const goal = 30000;
+  //Transforms strings in array to numbers
+  let total = data.map(item => Number(item.amount));
+
+  //Sums up numbers of the array (amounts)
+  const totalDonated = total.reduce(add, 0);
+  function add(a, b) {
+    return a + b;
+  }
+  console.log(totalDonated);
+  //Calculate the progress bar fill width
+  const percentRaised = (totalDonated * 100) / goal;
+  //...and fill
+  document.querySelector(
+    "#emptyBar"
+  ).style.background = `-webkit-linear-gradient(
+    left,
+    white,
+    white ${percentRaised}%,
+    transparent ${percentRaised}%,
+    transparent
+  )`;
+}
+fetchAmounts();

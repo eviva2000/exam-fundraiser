@@ -1,0 +1,16 @@
+#emptyBar {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  border: 2px white solid;
+  background: -webkit-linear-gradient(
+    left,
+    white,
+    white 0%,
+    transparent 0%,
+    transparent
+  );
+}
+@keyframes gradient {
+}
