@@ -21,32 +21,49 @@ body {
   display: none; }
 
 .selection-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly; }
-
-.select-money,
-.select-material {
-  width: 35%;
-  height: 40vh;
-  border: 1px grey solid;
-  border-radius: 10%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 5%; }
-  .select-money button,
-  .select-material button {
-    height: 40px;
-    margin-top: 50%;
-    background: #fcc60e;
-    border: none;
-    cursor: pointer;
-    border-radius: 2em;
-    font-family: "Poppins", sans-serif;
-    color: #de2235;
-    font-size: 0.8em;
-    width: 67%; }
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  padding: 1em 11em; }
+  .selection-wrapper .about-campaign {
+    border: 1px grey solid;
+    border-radius: 10%;
+    grid-column: 1/10;
+    grid-row: 1/10; }
+  .selection-wrapper .pdonators {
+    border: 1px grey solid;
+    border-radius: 10%;
+    grid-column: 11/17;
+    grid-row: 4/10;
+    max-height: 200px; }
+    .selection-wrapper .pdonators p {
+      font-size: 66%; }
+  .selection-wrapper .select-money {
+    grid-column: 5/10;
+    grid-row: 11/16; }
+  .selection-wrapper .select-material {
+    grid-column: 11/16;
+    grid-row: 11/16; }
+  .selection-wrapper .select-money,
+  .selection-wrapper .select-material {
+    border: 1px grey solid;
+    border-radius: 10%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5%; }
+    .selection-wrapper .select-money button,
+    .selection-wrapper .select-material button {
+      height: 40px;
+      margin-top: 50%;
+      background: #fcc60e;
+      border: none;
+      cursor: pointer;
+      border-radius: 2em;
+      font-family: "Poppins", sans-serif;
+      color: #de2235;
+      font-size: 0.8em;
+      width: 67%; }
 
 .material-container,
 .money-container {
@@ -135,8 +152,14 @@ body {
     padding-top: 3em;
     font-size: 1.2em; }
 
-.experiment {
-  position: absolute; }
-  .experiment img {
-    width: 5%;
+.face {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column: 2; }
+  .face input {
+    padding: 0.5em 0.75em; }
+  .face button {
+    padding: 0.5em 0.75em;
+    background: #8fef9f;
+    width: 3em;
     height: auto; }

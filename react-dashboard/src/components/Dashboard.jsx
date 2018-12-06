@@ -80,7 +80,9 @@ export default class Dashboard extends Component {
             <TotalMoney data={this.state.data} />
           </section>
           <section id="donators">
+
             <Donators data={this.state.data} />
+
           </section>
 
           <section id="materialDonations">
