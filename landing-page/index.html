@@ -116,6 +116,17 @@
             type="radio"
             class="radio-button"
             name="instrument"
+            value="violins"
+            id="m5"
+          />
+          <label for="m5"><span class="radio">Violin</span> </label>
+        </div>
+        <div class="material-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="instrument"
             value="guitar"
             id="m1"
           />
@@ -154,7 +165,26 @@
           />
           <label for="m4"><span class="radio">Music lessons</span> </label>
         </div>
-        <div class="material-selection"></div>
+      </form>
+      <form id="lessonInput">
+        <div class="input">
+          <label>Your Profile</label> <span class="required">*</span>
+          <input
+            type="text"
+            name="profile"
+            placeholder="What can you teach?"
+            required
+          />
+        </div>
+        <div class="input">
+          <label>Number of hours</label> <span class="required">*</span>
+          <input
+            type="text"
+            name="hours"
+            placeholder="Total number of hours"
+            required
+          />
+        </div>
       </form>
 
       <form id="userInfoForm2">

@@ -3,9 +3,9 @@ import TotalMoney from "./TotalMoney.jsx";
 import Donators from "./Donators.jsx";
 import MoneyDaily from "./MoneyDaily.jsx";
 import MaterialDonations from "./MaterialDonations.jsx";
+import firebase from "../modules/firebase";
 
 //This is the parent Component
-
 export default class Dashboard extends Component {
   constructor() {
     super();
@@ -14,6 +14,8 @@ export default class Dashboard extends Component {
       data: [],
       materials: []
     }; //Current state returns an empty array
+
+    this.authorize = this.authorize.bind(this); //bind this state to authorize function so that these values could be read/changed in authorize function
   }
 
   //This lifecycle method usually renders once after the component has mounted.
@@ -27,7 +29,6 @@ export default class Dashboard extends Component {
           "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
         ).then(res => {
           res.json().then(result => {
-            console.log(result);
             this.setState({ data: result });
           });
         });
@@ -42,27 +43,54 @@ export default class Dashboard extends Component {
       }
     }, 2000);
   }
-
+  //authorize the user according to input details (firebase)
+  authorize(e) {
+    e.preventDefault();
+    let emailValue = document.getElementById("email").value;
+    let pwdValue = document.getElementById("password").value;
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(emailValue, pwdValue)
+      .then(res => {
+        this.setState({ user: res });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   //Here we render all the children components.
   render() {
-    return (
-      <div id="dashboard">
-        <section id="totalMoney">
-          <TotalMoney data={this.state.data} />
-        </section>
-        <section id="donators">
-          <Donators data={this.state.data} index={this.state.data.index} />
-        </section>
-        <section id="moneyDaily">
-          <MoneyDaily />
-        </section>
-        <section id="materialDonations">
-          <MaterialDonations
-            className="container"
-            materials={this.state.materials}
-          />
-        </section>
-      </div>
-    );
+    if (!this.state.user) {
+      return (
+        <form method="get">
+          <input type="email" id="email" name="email" />
+          <input type="password" id="password" name="password" />
+          <button type="submit" id="login" onClick={this.authorize}>
+            Log In
+          </button>
+        </form>
+      );
+    } else {
+      return (
+        <div id="dashboard">
+          <section id="moneyDaily">
+            <MoneyDaily data={this.state.data} />
+          </section>
+          <section id="totalMoney">
+            <TotalMoney data={this.state.data} />
+          </section>
+          <section id="donators">
+            <Donators data={this.state.data} index={this.state.data.index} />
+          </section>
+
+          <section id="materialDonations">
+            <MaterialDonations
+              className="container"
+              materials={this.state.materials}
+            />
+          </section>
+        </div>
+      );
+    }
   }
 }
