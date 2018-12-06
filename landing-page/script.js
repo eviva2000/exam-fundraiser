@@ -118,7 +118,7 @@ function fetchAmounts() {
 }
 function progressBar(data) {
   //Goal
-  const goal = 30000;
+  const goal = 50000;
   //Transforms strings in array to numbers
   let total = data.map(item => Number(item.amount));
 
@@ -127,18 +127,10 @@ function progressBar(data) {
   function add(a, b) {
     return a + b;
   }
-  console.log(totalDonated);
-  //Calculate the progress bar fill width
+  //Calculate the progress percentage relative to the goal
   const percentRaised = (totalDonated * 100) / goal;
-  //...and fill
-  document.querySelector(
-    "#emptyBar"
-  ).style.background = `-webkit-linear-gradient(
-    left,
-    white,
-    white ${percentRaised}%,
-    transparent ${percentRaised}%,
-    transparent
-  )`;
+  //increase background gradient size as it expands to the percentage
+  document.querySelector("#emptyBar").style.backgroundSize =
+    100 * percentRaised + "%";
 }
 fetchAmounts();
