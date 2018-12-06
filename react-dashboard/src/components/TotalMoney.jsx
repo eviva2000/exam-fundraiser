@@ -12,10 +12,10 @@ export default class TotalMoney extends Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <h1>Total Amount of Money Donated</h1>
         <h1>{sum}</h1>
-      </div>
+      </React.Fragment>
     );
   }
 }
