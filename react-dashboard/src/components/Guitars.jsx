@@ -18,7 +18,7 @@ export default class Guitars extends Component {
       );
     }
     return (
-      <div margin={15}>
+      <div>
         {images}
         <h2 className="instrumentNumber">Donated Guitars: {number}</h2>
       </div>

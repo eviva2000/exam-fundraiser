@@ -8,20 +8,26 @@ class Saxophones extends Component {
     let instrumentArray = this.props.materials.map(
       saxofones => saxofones.musicMaterial
     );
-    console.log(instrumentArray);
+
     let saxofoneArray = instrumentArray.filter(
       instrument => instrument === "saxofone"
     );
 
-    console.log(saxofoneArray);
     let number = saxofoneArray.length;
     for (let i = 0; i < number; i++) {
-      images.push(<img key={Math.random()} src={Saxophone} alt={"saxofone"} />);
+      images.push(
+        <img
+          key={Math.random()}
+          src={Saxophone}
+          alt={"saxofone"}
+          height="120"
+        />
+      );
     }
     return (
       <div>
         {images}
-        <h1 className="instrumentNumber">Donated Saxofone: {number}</h1>
+        <h2 className="instrumentNumber">Donated Saxofone: {number}</h2>
       </div>
     );
   }
