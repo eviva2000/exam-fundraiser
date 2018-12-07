@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import * as d3 from "d3";
 
 //Gets properties from the parent Dashboard, maps through the array and returns a list of amounts and names.
 export default class Donators extends Component {
   render() {
-    let formatTime = d3.timeFormat("%d-%m-%Y");
     // let formatedDate = formatTime(dateType);
     return (
       <React.Fragment>
