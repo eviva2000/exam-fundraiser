@@ -8,20 +8,21 @@ export default class Violins extends Component {
     let instrumentArray = this.props.materials.map(
       violins => violins.musicMaterial
     );
-    console.log(instrumentArray);
+
     let violinArray = instrumentArray.filter(
-      instrument => instrument === "compositions"
+      instrument => instrument === "violins"
     );
 
-    console.log(violinArray);
     let number = violinArray.length;
     for (let i = 0; i < number; i++) {
-      images.push(<img key={Math.random()} src={Violin} alt={"Violin"} />);
+      images.push(
+        <img key={Math.random()} src={Violin} alt={"Violin"} height="120" />
+      );
     }
     return (
       <div>
         {images}
-        <h1 className="instrumentNumber">Donated Guitars: {number}</h1>
+        <h1 className="instrumentNumber">Donated Violins: {number}</h1>
       </div>
     );
   }

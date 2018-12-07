@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="landing-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
     <title>Fundraiser-project</title>
   </head>
   <body>
@@ -13,6 +17,8 @@
     </section>
 
     <div class="selection-wrapper">
+      <section class="about-campaign"></section>
+      <section class="pdonators scroller"></section>
       <section class="select-money"><button>Donate money</button></section>
       <section class="select-material">
         <button>Donate materials</button>
@@ -30,7 +36,7 @@
     <section class="money-container hidden">
       <div class="closebtn"><span>&#10005;</span></div>
       <form id="moneydonation">
-        <div class="amount-selection">
+        <div class="amount-selection ">
           <input
             required
             type="radio"
@@ -95,8 +101,10 @@
           -->
 
           <label>Your name</label> <span class="required">*</span>
-
-          <input type="text" name="name" placeholder="Full name" required />
+          <div class="face">
+            <input type="text" name="name" placeholder="Full name" required />
+            <button>smile</button>
+          </div>
         </div>
 
         <div class="input">
@@ -117,6 +125,17 @@
       <div class="closebtn2"><span>&#10005;</span></div>
 
       <form id="instrumentdonation">
+        <div class="material-selection">
+          <input
+            required
+            type="radio"
+            class="radio-button"
+            name="instrument"
+            value="violins"
+            id="m5"
+          />
+          <label for="m5"><span class="radio">Violin</span> </label>
+        </div>
         <div class="material-selection">
           <input
             required
@@ -161,7 +180,26 @@
           />
           <label for="m4"><span class="radio">Music lessons</span> </label>
         </div>
-        <div class="material-selection"></div>
+        <div id="lessonInput" class="hidden input">
+          <div class="input">
+            <label>Your Profile</label> <span class="required">*</span>
+            <input
+              type="text"
+              name="profile"
+              placeholder="What can you teach?"
+              required
+            />
+          </div>
+          <div class="input">
+            <label>Number of hours</label> <span class="required">*</span>
+            <input
+              type="number"
+              name="hours"
+              placeholder="Total number of hours"
+              required
+            />
+          </div>
+        </div>
       </form>
 
       <form id="userInfoForm2">
@@ -182,6 +220,9 @@
         <input type="submit" name="submit" value="Donate" />
       </form>
     </section>
+    <template class="donators">
+      <article><p></p></article>
+    </template>
     <script src="script.js"></script>
   </body>
 </html>

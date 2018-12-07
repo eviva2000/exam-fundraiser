@@ -7,10 +7,14 @@ let materialContainer = document.querySelector(".material-container");
 let materialbtn = document.querySelector(".select-material button");
 let closeBtn = document.querySelector(".closebtn");
 let closeBtn2 = document.querySelector(".closebtn2");
+const additionalLessonForm = document.querySelector("#lessonInput");
 const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
 const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
+
+let temp = document.querySelector("template").content;
+
 // showing money donation modal //
 moneybtn.addEventListener("click", function() {
   moneyContainer.classList.remove("hidden");
@@ -31,6 +35,13 @@ closeBtn2.addEventListener("click", function() {
   materialContainer.style.display = "none";
   console.log("yess");
 });
+
+// Opens the additional input for lessons
+document.querySelector("#m4").addEventListener("click", function() {
+  additionalLessonForm.classList.remove("hidden");
+  console.log("yess");
+});
+
 // ADDING money donation to database//
 let userInfoForm1 = document.querySelector("#userInfoForm1");
 userInfoForm1.addEventListener("submit", e => {
@@ -85,6 +96,8 @@ function addUserInfo2() {
     email: userInfoForm2.elements.email.value,
     musicMaterial: document.querySelector('input[name="instrument"]:checked')
       .value,
+    profile: document.querySelector('input[name="profile"]').value,
+    hours: document.querySelector('input[name="hours"]').value,
     comment: comment2
   };
   if (!comment2) {
@@ -107,15 +120,60 @@ function clearForm() {
   userInfoForm1.elements.name.value = "";
   userInfoForm1.elements.email.value = "";
   moneyForm.elements.amount.value = "";
+  userInfoForm2.elements.name.value = "";
+  userInfoForm2.elements.email.value = "";
+  document.querySelector('input[name="profile"]').value = "";
+  document.querySelector('input[name="hours"]').value;
 }
-/// Fetch endpoint (via get method) and show money collected
-function fetchAmounts() {
+
+//Adding money donators to the corresponding section
+/// Fetch endpoint (via get method)
+function fetchEnpoint1() {
   fetch(endpoint)
-    .then(e => e.json())
+    .then(res => res.json())
     .then(res => {
+      showDonators;
       progressBar(res);
     });
 }
+function showDonators(donatorlist) {
+  donatorlist.forEach(donator => {
+    console.log(donator);
+    let clone = temp.cloneNode(true);
+    let myDate = donator.date;
+    let newDate = myDate.substr(1, 9);
+    clone.querySelector("article p").textContent = `${donator.name} donates ${
+      donator.amount
+    } DK. at ${newDate}`;
+
+    console.log(newDate);
+    document.querySelector(".pdonators").appendChild(clone);
+  });
+}
+fetchEnpoint1();
+
+//Adding material donators to the corresponding section
+function addingMaterialDonators() {
+  fetch(endpoint2)
+    .then(res => res.json())
+    .then(showMaterialDonators);
+}
+function showMaterialDonators(donatorlist) {
+  donatorlist.forEach(donator => {
+    console.log(donator);
+    let clone = temp.cloneNode(true);
+    let myDate = donator.date;
+    let newDate = myDate.substr(1, 9);
+    clone.querySelector("article p").textContent = `${donator.name} donates ${
+      donator.musicMaterial
+    } at ${newDate}`;
+
+    document.querySelector(".pdonators").appendChild(clone);
+  });
+}
+addingMaterialDonators();
+
+//Progress bar functions
 function progressBar(data) {
   //Goal
   const goal = 50000;
@@ -133,4 +191,3 @@ function progressBar(data) {
   document.querySelector("#emptyBar").style.backgroundSize =
     100 * percentRaised + "%";
 }
-fetchAmounts();
