@@ -22,7 +22,7 @@ export default class Violins extends Component {
     return (
       <div>
         {images}
-        <h1 className="instrumentNumber">Donated Violins: {number}</h1>
+        <h2 className="instrumentNumber">Donated Violins: {number}</h2>
       </div>
     );
   }

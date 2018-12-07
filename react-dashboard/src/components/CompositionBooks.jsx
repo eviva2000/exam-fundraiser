@@ -27,9 +27,9 @@ export default class CompositionBooks extends Component {
     return (
       <div>
         {images}
-        <h1 className="instrumentNumber">
+        <h2 className="instrumentNumber">
           Donated Composition Books: {number}
-        </h1>
+        </h2>
       </div>
     );
   }
