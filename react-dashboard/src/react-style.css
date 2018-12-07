@@ -1,3 +1,61 @@
-img {
-  width: 3em;
-  height: auto; }
+div#dashboard {
+  background-color: #1b2440;
+  display: grid; }
+  div#dashboard section#moneyDaily {
+    background-color: #ffffff;
+    width: 100vw; }
+    div#dashboard section#moneyDaily div div.App h1 {
+      text-align: center;
+      font-size: 2vw; }
+  div#dashboard section#totalMoney {
+    width: 25vw;
+    height: 20vw;
+    border-radius: 30px;
+    background-color: #ffffff; }
+    div#dashboard section#totalMoney h1:first-child {
+      background-color: #fcc60e;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin: 0;
+      padding: 20px 15px;
+      text-align: center;
+      font-size: 2vw; }
+    div#dashboard section#totalMoney h1:nth-child(2) {
+      text-align: center;
+      font-size: 4vw;
+      color: #de2235; }
+  div#dashboard section#donators {
+    background-color: #ffffff;
+    border-radius: 30px;
+    width: 50%; }
+    div#dashboard section#donators h1 {
+      background-color: #fcc60e;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin: 0;
+      padding: 20px 15px;
+      text-align: center;
+      font-size: 2vw; }
+    div#dashboard section#donators ul {
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); }
+  div#dashboard section#materialDonations {
+    width: 45vw;
+    border-radius: 30px;
+    border: solid 5px #94d3f2;
+    color: #ffffff; }
+    div#dashboard section#materialDonations div h1 {
+      text-align: center;
+      font-size: 2vw; }
+    div#dashboard section#materialDonations div div img {
+      margin: 5px; }
+    div#dashboard section#materialDonations div div h1 {
+      text-align: center;
+      font-size: 2vw; }
+      div#dashboard section#materialDonations div div h1 span {
+        color: #de2235; }
+    div#dashboard section#materialDonations div div ul {
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); }

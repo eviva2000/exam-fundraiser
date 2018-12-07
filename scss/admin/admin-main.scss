@@ -1,4 +1,119 @@
-img {
-  width: 3em;
-  height: auto;
+$light-color: #ffffff;
+$yellow: #fcc60e;
+$blue: #1b2440;
+$red: #de2235;
+$light-blue: #94d3f2;
+
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+@mixin h1 {
+  text-align: center;
+  font-size: 2vw;
+}
+
+@mixin yellowH1 {
+  background-color: $yellow;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin: 0;
+  padding: 20px 15px;
+  @include h1;
+}
+
+div#dashboard {
+  background-color: $blue;
+  display: grid;
+
+  section#moneyDaily {
+    background-color: $light-color;
+    width: 100vw;
+    div {
+      div.App {
+        h1 {
+          @include h1;
+        }
+        div#react-linechart-1544114961351 {
+        }
+      }
+    }
+  }
+  section#totalMoney {
+    width: 25vw;
+    height: 20vw;
+    border-radius: 30px;
+    background-color: $light-color;
+    h1:first-child {
+      @include yellowH1;
+    }
+    h1:nth-child(2) {
+      text-align: center;
+      font-size: 4vw;
+      color: $red;
+    }
+  }
+  section#donators {
+    background-color: $light-color;
+    border-radius: 30px;
+    width: 50%;
+    h1 {
+      @include yellowH1;
+    }
+    ul {
+      @include display-grid;
+      grid-template-columns: repeat(3, 1fr);
+      li {
+        h2:first-child {
+        }
+        h2:nth-child(2) {
+        }
+        p.comments {
+        }
+        p.date {
+        }
+      }
+    }
+  }
+  section#materialDonations {
+    width: 45vw;
+    border-radius: 30px;
+    border: solid 5px $light-blue;
+    color: $light-color;
+    div {
+      h1 {
+        @include h1;
+      }
+      div {
+        img {
+          margin: 5px;
+        }
+        h2 {
+        }
+      }
+      div {
+        h1 {
+          @include h1;
+          span {
+            color: $red;
+          }
+        }
+        ul {
+          @include display-grid;
+          grid-template-columns: repeat(2, 1fr);
+          li {
+            h2:first-child {
+            }
+            h2:nth-child(2) {
+            }
+            p.comments {
+            }
+            p.date {
+            }
+          }
+        }
+      }
+    }
+  }
 }
