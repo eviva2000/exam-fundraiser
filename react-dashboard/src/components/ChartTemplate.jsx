@@ -4,11 +4,8 @@ import LineChart, { parseFlatArray } from "react-linechart";
 
 export default class ChartTemplate extends Component {
   render() {
-    let parseTime = d3.timeParse("%Y-%m-%d");
-    let formatTime = d3.timeFormat("%d.%m.%Y");
-
     const points = this.props.data.map((item, index) => ({
-      x: item.key.substring(0, 2),
+      x: item.key,
       y: item.value
     }));
     const sorted = points.sort(function(a, b) {
@@ -38,14 +35,16 @@ export default class ChartTemplate extends Component {
         <div className="App">
           <h1>Daily Money Donated</h1>
           <LineChart
-            width={600}
-            height={400}
-            ticks={dataxy[0].points.length}
+            width={1200}
+            height={500}
+            ticks={dataxy[0].points.length - 1}
             data={dataxy}
             xLabel="Dates"
             yLabel="DKK"
-            xMin="1"
             yMin="0"
+            onPointHover={obj => `x: ${obj.x}<br />y: ${obj.y}`}
+            xParser={d3.timeParse("%Y-%m-%d")}
+            xDisplay={d3.timeFormat("%d.%m")}
           />
         </div>
       </div>
