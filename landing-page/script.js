@@ -126,7 +126,7 @@ function clearForm() {
   document.querySelector('input[name="hours"]').value;
 }
 
-//Adding donators to the corresponding section
+//Adding money donators to the corresponding section
 function addingDonators() {
   fetch(endpoint)
     .then(res => res.json())
@@ -138,15 +138,33 @@ function showDonators(donatorlist) {
     let clone = temp.cloneNode(true);
     let myDate = donator.date;
     let newDate = myDate.substr(1, 9);
-    // let realdate = newDate.split(""); //convert 'newDate' to array
-    // realdate = realdate.reverse(); //reverse 'newDate' order
-    // realdate = realdate.join("");
-    clone.querySelector("article p").textContent = `${
-      donator.name
-    } donates at ${newDate}`;
+    clone.querySelector("article p").textContent = `${donator.name} donates ${
+      donator.amount
+    } DK. at ${newDate}`;
 
     console.log(newDate);
     document.querySelector(".pdonators").appendChild(clone);
   });
 }
 addingDonators();
+
+//Adding material donators to the corresponding section
+function addingMaterialDonators() {
+  fetch(endpoint2)
+    .then(res => res.json())
+    .then(showMaterialDonators);
+}
+function showMaterialDonators(donatorlist) {
+  donatorlist.forEach(donator => {
+    console.log(donator);
+    let clone = temp.cloneNode(true);
+    let myDate = donator.date;
+    let newDate = myDate.substr(1, 9);
+    clone.querySelector("article p").textContent = `${donator.name} donates ${
+      donator.musicMaterial
+    } at ${newDate}`;
+
+    document.querySelector(".pdonators").appendChild(clone);
+  });
+}
+addingMaterialDonators();
