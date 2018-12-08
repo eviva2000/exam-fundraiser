@@ -1,6 +1,9 @@
 body {
   font-family: "Poppins", sans-serif;
-  font-weight: 300; }
+  font-weight: 200;
+  margin: 0;
+  background-color: #1b2440;
+  color: white; }
 
 .modal {
   background-color: white;
@@ -35,11 +38,13 @@ body {
     border-radius: 30px;
     grid-column: 11/17;
     grid-row: 4/10;
-    max-height: 32vh;
+    max-height: 36vh;
     overflow-y: scroll;
     padding-left: 1em; }
     .selection-wrapper .pdonators p {
-      font-size: 70%; }
+      font-size: 18px;
+      color: white;
+      font-weight: 100; }
   .selection-wrapper .select-money {
     grid-column: 5/10;
     grid-row: 11/16; }
@@ -74,9 +79,9 @@ body {
   align-items: center;
   justify-content: space-around;
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 10%; }
+  margin: 8% 9%;
+  width: 75vw;
+  padding: 4em; }
 
 .closebtn,
 .closebtn2 {
@@ -165,3 +170,40 @@ body {
     background: #8fef9f;
     width: 3em;
     height: auto; }
+
+.comments {
+  height: 5vh;
+  padding: 1em;
+  border: solid 1px grey;
+  border-radius: 30px;
+  margin: 15%; }
+
+header {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header a {
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+    font-size: 17px; }
+  header .nav-container {
+    display: flex;
+    justify-content: flex-start; }
+
+.firstpage-container {
+  display: flex;
+  justify-content: space-around; }
+  .firstpage-container .firstpart {
+    padding-left: 8em; }
+    .firstpage-container .firstpart img {
+      width: 15em;
+      height: auto; }
+    .firstpage-container .firstpart .p-wrapper {
+      width: 30%;
+      text-align: justify; }
+  .firstpage-container .secondpart img {
+    width: 22em; }
+  .firstpage-container .thirdpart img {
+    width: 6em; }

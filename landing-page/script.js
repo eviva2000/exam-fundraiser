@@ -133,11 +133,24 @@ function addingDonators() {
     .then(showDonators);
 }
 function showDonators(donatorlist) {
+  console.log(donatorlist);
+  donatorlist.sort(function(a, b) {
+    var key1 = a.date;
+    var key2 = b.date;
+
+    if (key1 > key2) {
+      return -1;
+    } else if (key1 == key2) {
+      return 0;
+    } else {
+      return 1;
+    }
+  });
   donatorlist.forEach(donator => {
     console.log(donator);
     let clone = temp.cloneNode(true);
     let myDate = donator.date;
-    let newDate = myDate.substr(1, 9);
+    let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.amount
     } DK. at ${newDate}`;
@@ -155,11 +168,23 @@ function addingMaterialDonators() {
     .then(showMaterialDonators);
 }
 function showMaterialDonators(donatorlist) {
+  donatorlist.sort(function(a, b) {
+    var key1 = a.date;
+    var key2 = b.date;
+
+    if (key1 > key2) {
+      return -1;
+    } else if (key1 == key2) {
+      return 0;
+    } else {
+      return 1;
+    }
+  });
   donatorlist.forEach(donator => {
     console.log(donator);
     let clone = temp.cloneNode(true);
     let myDate = donator.date;
-    let newDate = myDate.substr(1, 9);
+    let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.musicMaterial
     } at ${newDate}`;
