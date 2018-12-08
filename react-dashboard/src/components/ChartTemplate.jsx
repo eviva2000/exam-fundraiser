@@ -1,36 +1,53 @@
 import React, { Component } from "react";
 import * as d3 from "d3";
-import LineChart from "react-linechart";
+import LineChart, { parseFlatArray } from "react-linechart";
 
 export default class ChartTemplate extends Component {
   render() {
-    let data = [
+    const points = this.props.data.map((item, index) => ({
+      x: item.key,
+      y: item.value
+    }));
+    const sorted = points.sort(function(a, b) {
+      var key1 = a.x;
+      var key2 = b.x;
+
+      if (key1 > key2) {
+        return -1;
+      } else if (key1 === key2) {
+        return 0;
+      } else {
+        return 1;
+      }
+    });
+
+    console.table(sorted);
+
+    let dataxy = [
       {
-        color: "red",
-        points: this.props.data.map(item => ({
-          y: item.value,
-          x: item.key
-        }))
+        color: "#de2235",
+        points: sorted
       }
     ];
-
-    console.table(data);
 
     return (
       <div>
         <div className="App">
-          <h1>My First LineChart</h1>
-          <LineChart width={600} height={400} data={data} />
+          <h1>Daily Money Donated</h1>
+          <LineChart
+            width={1200}
+            height={500}
+            ticks={dataxy[0].points.length - 1}
+            data={dataxy}
+            xLabel="Dates"
+            yLabel="DKK"
+            yMin="0"
+            onPointHover={obj => `x: ${obj.x}<br />y: ${obj.y}`}
+            xParser={d3.timeParse("%Y-%m-%d")}
+            xDisplay={d3.timeFormat("%d.%m")}
+          />
         </div>
       </div>
-      //   <ul>
-      //     {this.props.data.map(item => (
-      //       <li key={item.id}>
-      //         <h2>{item.value} DKK</h2>
-      //         <h2>{item.key}</h2>
-      //       </li>
-      //     ))}
-      //   </ul>
     );
   }
 }

@@ -1,76 +1,95 @@
+body,
+html {
+  margin: 0 auto;
+  background-color: #1b2440;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   margin: 0;
   background-color: #1b2440;
-  color: white; }
+  color: white;
+}
 
 .modal {
   background-color: white;
   position: absolute;
   top: 0;
   right: 0;
-  margin: 10%; }
-  .modal .closebtn {
-    position: absolute;
-    top: 0.5em;
-    left: 0.5em;
-    cursor: pointer; }
+  margin: 10%;
+}
+.modal .closebtn {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  cursor: pointer;
+}
 
 .modal p {
-  text-align: center; }
+  text-align: center;
+}
 
 .hidden {
-  display: none; }
+  display: none;
+}
 
 .selection-wrapper {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(15, 1fr);
-  padding: 1em 11em; }
-  .selection-wrapper .about-campaign {
-    border: 1px grey solid;
-    border-radius: 30px;
-    grid-column: 1/10;
-    grid-row: 1/10; }
-  .selection-wrapper .pdonators {
-    border: 1px grey solid;
-    border-radius: 30px;
-    grid-column: 11/17;
-    grid-row: 4/10;
-    max-height: 36vh;
-    overflow-y: scroll;
-    padding-left: 1em; }
-    .selection-wrapper .pdonators p {
-      font-size: 18px;
-      color: white;
-      font-weight: 100; }
-  .selection-wrapper .select-money {
-    grid-column: 5/10;
-    grid-row: 11/16; }
-  .selection-wrapper .select-material {
-    grid-column: 11/16;
-    grid-row: 11/16; }
-  .selection-wrapper .select-money,
-  .selection-wrapper .select-material {
-    border: 1px grey solid;
-    border-radius: 30px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 5%; }
-    .selection-wrapper .select-money button,
-    .selection-wrapper .select-material button {
-      height: 40px;
-      margin-top: 50%;
-      background: #fcc60e;
-      border: none;
-      cursor: pointer;
-      border-radius: 2em;
-      font-family: "Poppins", sans-serif;
-      color: #de2235;
-      font-size: 0.8em;
-      width: 67%; }
+  padding: 1em 11em;
+}
+.selection-wrapper .about-campaign {
+  border: 1px grey solid;
+  border-radius: 30px;
+  grid-column: 1/10;
+  grid-row: 1/10;
+}
+.selection-wrapper .pdonators {
+  border: 1px grey solid;
+  border-radius: 30px;
+  grid-column: 11/17;
+  grid-row: 4/10;
+  max-height: 36vh;
+  overflow-y: scroll;
+  padding-left: 1em;
+}
+.selection-wrapper .pdonators p {
+  font-size: 18px;
+  color: white;
+  font-weight: 100;
+}
+.selection-wrapper .select-money {
+  grid-column: 5/10;
+  grid-row: 11/16;
+}
+.selection-wrapper .select-material {
+  grid-column: 11/16;
+  grid-row: 11/16;
+}
+.selection-wrapper .select-money,
+.selection-wrapper .select-material {
+  border: 1px grey solid;
+  border-radius: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5%;
+}
+.selection-wrapper .select-money button,
+.selection-wrapper .select-material button {
+  height: 40px;
+  margin-top: 50%;
+  background: #fcc60e;
+  border: none;
+  cursor: pointer;
+  border-radius: 2em;
+  font-family: "Poppins", sans-serif;
+  color: #de2235;
+  font-size: 0.8em;
+  width: 67%;
+}
 
 .material-container,
 .money-container {
@@ -81,14 +100,16 @@ body {
   position: absolute;
   margin: 8% 9%;
   width: 75vw;
-  padding: 4em; }
+  padding: 4em;
+}
 
 .closebtn,
 .closebtn2 {
   position: absolute;
   top: 0.5em;
   left: 0.5em;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #userInfoForm1,
 #userInfoForm2 {
@@ -96,114 +117,154 @@ body {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
   font-family: "Poppins", sans-serif;
-  font-weight: 100; }
-  #userInfoForm1 .input,
-  #userInfoForm2 .input {
-    grid-template-columns: 1fr 2fr;
-    grid-column: 3/9;
-    height: 51px;
-    margin-bottom: 8px;
-    position: relative; }
-    #userInfoForm1 .input label,
-    #userInfoForm2 .input label {
-      position: absolute;
-      width: 30%;
-      z-index: 100;
-      font-size: 16px;
-      top: 25%; }
-    #userInfoForm1 .input input,
-    #userInfoForm1 .input textarea,
-    #userInfoForm2 .input input,
-    #userInfoForm2 .input textarea {
-      position: absolute;
-      left: 25%;
-      width: 35%;
-      height: 39px;
-      border: 1px solid grey;
-      padding: 0 0 0 15px; }
-    #userInfoForm1 .input textarea,
-    #userInfoForm2 .input textarea {
-      top: 5em; }
-    #userInfoForm1 .input .required,
-    #userInfoForm2 .input .required {
-      position: absolute;
-      color: rgba(255, 0, 0, 0.534);
-      top: 5%;
-      left: 23%; }
-  #userInfoForm1 input[type="submit"],
-  #userInfoForm2 input[type="submit"] {
-    height: 40px;
-    width: 7em;
-    grid-column: 3/4;
-    margin-top: 60%;
-    background: #fcc60e;
-    border: none;
-    cursor: pointer;
-    border-radius: 2em;
-    font-family: "Poppins", sans-serif;
-    color: #de2235;
-    font-size: 1em; }
-  #userInfoForm1 :nth-child(3),
-  #userInfoForm2 :nth-child(3) {
-    margin-top: 0%; }
+  font-weight: 100;
+}
+#userInfoForm1 .input,
+#userInfoForm2 .input {
+  grid-template-columns: 1fr 2fr;
+  grid-column: 3/9;
+  height: 51px;
+  margin-bottom: 8px;
+  position: relative;
+}
+#userInfoForm1 .input label,
+#userInfoForm2 .input label {
+  position: absolute;
+  width: 30%;
+  z-index: 100;
+  font-size: 16px;
+  top: 25%;
+}
+#userInfoForm1 .input input,
+#userInfoForm1 .input textarea,
+#userInfoForm2 .input input,
+#userInfoForm2 .input textarea {
+  position: absolute;
+  left: 25%;
+  width: 35%;
+  height: 39px;
+  border: 1px solid grey;
+  padding: 0 0 0 15px;
+}
+#userInfoForm1 .input textarea,
+#userInfoForm2 .input textarea {
+  top: 5em;
+}
+#userInfoForm1 .input .required,
+#userInfoForm2 .input .required {
+  position: absolute;
+  color: rgba(255, 0, 0, 0.534);
+  top: 5%;
+  left: 23%;
+}
+#userInfoForm1 input[type="submit"],
+#userInfoForm2 input[type="submit"] {
+  height: 40px;
+  width: 7em;
+  grid-column: 3/4;
+  margin-top: 60%;
+  background: #fcc60e;
+  border: none;
+  cursor: pointer;
+  border-radius: 2em;
+  font-family: "Poppins", sans-serif;
+  color: #de2235;
+  font-size: 1em;
+}
+#userInfoForm1 :nth-child(3),
+#userInfoForm2 :nth-child(3) {
+  margin-top: 0%;
+}
 
 #moneydonation {
-  margin-left: 20%; }
-  #moneydonation .amount-selection {
-    padding-top: 3em;
-    font-size: 1.2em; }
+  margin-left: 20%;
+}
+#moneydonation .amount-selection {
+  padding-top: 3em;
+  font-size: 1.2em;
+}
 
 #instrumentdonation {
-  margin-left: 20%; }
-  #instrumentdonation .material-selection {
-    padding-top: 3em;
-    font-size: 1.2em; }
+  margin-left: 20%;
+}
+#instrumentdonation .material-selection {
+  padding-top: 3em;
+  font-size: 1.2em;
+}
 
 .face {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-column: 2; }
-  .face input {
-    padding: 0.5em 0.75em; }
-  .face button {
-    padding: 0.5em 0.75em;
-    background: #8fef9f;
-    width: 3em;
-    height: auto; }
+  grid-column: 2;
+}
+.face input {
+  padding: 0.5em 0.75em;
+}
+.face button {
+  padding: 0.5em 0.75em;
+  background: #8fef9f;
+  width: 3em;
+  height: auto;
+}
 
 .comments {
   height: 5vh;
   padding: 1em;
   border: solid 1px grey;
   border-radius: 30px;
-  margin: 15%; }
+  margin: 15%;
+}
 
 header {
   padding: 1em;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
-  header a {
-    padding: 1em;
-    text-decoration: none;
-    color: white;
-    font-size: 17px; }
-  header .nav-container {
-    display: flex;
-    justify-content: flex-start; }
+  align-items: center;
+}
+header a {
+  padding: 1em;
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+}
+header .nav-container {
+  display: flex;
+  justify-content: flex-start;
+}
 
 .firstpage-container {
   display: flex;
-  justify-content: space-around; }
-  .firstpage-container .firstpart {
-    padding-left: 8em; }
-    .firstpage-container .firstpart img {
-      width: 15em;
-      height: auto; }
-    .firstpage-container .firstpart .p-wrapper {
-      width: 30%;
-      text-align: justify; }
-  .firstpage-container .secondpart img {
-    width: 22em; }
-  .firstpage-container .thirdpart img {
-    width: 6em; }
+  justify-content: space-around;
+}
+.firstpage-container .firstpart {
+  padding-left: 8em;
+}
+.firstpage-container .firstpart img {
+  width: 15em;
+  height: auto;
+}
+.firstpage-container .firstpart .p-wrapper {
+  width: 30%;
+  text-align: justify;
+}
+.firstpage-container .secondpart img {
+  width: 22em;
+}
+.firstpage-container .thirdpart img {
+  width: 6em;
+}
+#emptyBar {
+  position: relative;
+  height: 50px;
+  border-radius: 20px;
+  border: 2px white solid;
+  background: -webkit-linear-gradient(
+    left,
+    white,
+    white 1%,
+    transparent 1%,
+    transparent
+  );
+  background-size: 100%;
+  transition: all 2s;
+}
