@@ -11,6 +11,15 @@
     transparent
   );
   background-size: 100%;
-  transition: all 2s;
+  transition: background-size 2s;
   margin: 13%;
+  h2 {
+    position: absolute;
+    margin: 0;
+    right: 100%;
+    opacity: 0;
+    font-size: 12pt;
+    color: #1b2440;
+    transition: all 2s;
+  }
 }
