@@ -1,3 +1,8 @@
+body,
+html {
+  margin: 0 auto;
+  background-color: #1b2440; }
+
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300; }
@@ -165,3 +170,12 @@ body {
     background: #8fef9f;
     width: 3em;
     height: auto; }
+
+#emptyBar {
+  position: relative;
+  height: 50px;
+  border-radius: 20px;
+  border: 2px white solid;
+  background: -webkit-linear-gradient(left, white, white 1%, transparent 1%, transparent);
+  background-size: 100%;
+  transition: all 2s; }

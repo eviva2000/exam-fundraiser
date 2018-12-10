@@ -125,10 +125,14 @@ function clearForm() {
 }
 
 //Adding money donators to the corresponding section
-function addingDonators() {
+/// Fetch endpoint (via get method)
+function fetchEnpoint1() {
   fetch(endpoint)
     .then(res => res.json())
-    .then(showDonators);
+    .then(res => {
+      showDonators;
+      progressBar(res);
+    });
 }
 function showDonators(donatorlist) {
   donatorlist.forEach(donator => {
@@ -144,7 +148,7 @@ function showDonators(donatorlist) {
     document.querySelector(".pdonators").appendChild(clone);
   });
 }
-addingDonators();
+fetchEnpoint1();
 
 //Adding material donators to the corresponding section
 function addingMaterialDonators() {
@@ -166,3 +170,22 @@ function showMaterialDonators(donatorlist) {
   });
 }
 addingMaterialDonators();
+
+//Progress bar functions
+function progressBar(data) {
+  //Goal
+  const goal = 50000;
+  //Transforms strings in array to numbers
+  let total = data.map(item => Number(item.amount));
+
+  //Sums up numbers of the array (amounts)
+  const totalDonated = total.reduce(add, 0);
+  function add(a, b) {
+    return a + b;
+  }
+  //Calculate the progress percentage relative to the goal
+  const percentRaised = (totalDonated * 100) / goal;
+  //increase background gradient size as it expands to the percentage
+  document.querySelector("#emptyBar").style.backgroundSize =
+    100 * percentRaised + "%";
+}

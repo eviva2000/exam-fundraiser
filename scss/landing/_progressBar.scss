@@ -1,0 +1,15 @@
+#emptyBar {
+  position: relative;
+  height: 50px;
+  border-radius: 20px;
+  border: 2px white solid;
+  background: -webkit-linear-gradient(
+    left,
+    white,
+    white 1%,
+    transparent 1%,
+    transparent
+  );
+  background-size: 100%;
+  transition: all 2s;
+}

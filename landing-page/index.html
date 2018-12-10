@@ -12,6 +12,10 @@
     <title>Fundraiser-project</title>
   </head>
   <body>
+    <section id="progress-section">
+      <div id="emptyBar"><div id="filledBar"></div></div>
+    </section>
+
     <div class="selection-wrapper">
       <section class="about-campaign"></section>
       <section class="pdonators scroller"></section>
@@ -40,6 +44,7 @@
             name="amount"
             value="100"
             id="a1"
+            checked
           />
           <label for="a1"><span class="radio">100 DK.</span> </label>
         </div>
@@ -77,7 +82,13 @@
           <label for="a4"><span class="radio">Other amounts</span> </label>
         </div>
 
-        <input type="number" name="custome" value="" class="custome " /><br />
+        <input
+          type="number"
+          name="custome"
+          min="1"
+          value=""
+          class="custome "
+        /><br />
       </form>
       <form id="userInfoForm1">
         <div class="input">
