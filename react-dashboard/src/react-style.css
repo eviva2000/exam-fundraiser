@@ -1,33 +1,92 @@
 div#dashboard {
+  position: relative;
+  font-family: "Poppins";
   background-color: #1b2440;
-  display: grid; }
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto auto auto;
+  color: #ffffff;
+  padding: 3vw; }
+  div#dashboard h2 {
+    font-size: 1vw; }
+  div#dashboard div#header {
+    grid-row: 1;
+    height: 100px; }
+    div#dashboard div#header h1 {
+      text-align: center;
+      font-size: 1.3vw;
+      display: inline-block;
+      margin-left: 55px; }
+    div#dashboard div#header button {
+      position: absolute;
+      right: 55px;
+      top: 45px; }
   div#dashboard section#moneyDaily {
     background-color: #ffffff;
-    width: 100vw; }
-    div#dashboard section#moneyDaily div div.App h1 {
-      text-align: center;
-      font-size: 2vw; }
-  div#dashboard section#totalMoney {
-    width: 25vw;
-    height: 20vw;
+    width: 900px;
     border-radius: 30px;
-    background-color: #ffffff; }
-    div#dashboard section#totalMoney h1:first-child {
+    grid-row: 2;
+    grid-column: 2/4;
+    margin-left: 3vw;
+    margin-bottom: 30px;
+    z-index: 100; }
+    div#dashboard section#moneyDaily div.App h1 {
       background-color: #fcc60e;
       border-top-left-radius: 30px;
       border-top-right-radius: 30px;
       margin: 0;
       padding: 20px 15px;
       text-align: center;
-      font-size: 2vw; }
+      font-size: 1.3vw;
+      color: #1b2440; }
+    div#dashboard section#moneyDaily div.App div:nth-child(2) svg {
+      padding-left: 20px; }
+      div#dashboard section#moneyDaily div.App div:nth-child(2) svg g:first-child path.domain {
+        stroke-width: 2; }
+      div#dashboard section#moneyDaily div.App div:nth-child(2) svg g:nth-child(2) {
+        stroke-width: 2; }
+      div#dashboard section#moneyDaily div.App div:nth-child(2) svg g.line path {
+        stroke-width: 5; }
+  div#dashboard section#totalMoney {
+    width: 18vw;
+    height: 540px;
+    border-radius: 30px;
+    border: solid 5px #94d3f2;
+    color: #ffffff;
+    grid-row: 2/4;
+    grid-column: 1;
+    margin-bottom: 20px; }
+    div#dashboard section#totalMoney img {
+      width: 40%;
+      margin: 15px auto 20px auto;
+      display: block; }
     div#dashboard section#totalMoney h1:nth-child(2) {
       text-align: center;
-      font-size: 4vw;
-      color: #de2235; }
+      font-size: 1.3vw;
+      margin: 15px auto 5px auto; }
+    div#dashboard section#totalMoney h1:nth-child(3) {
+      text-align: center;
+      font-size: 2.8vw;
+      color: #de2235;
+      margin: 15px auto 50px auto; }
+    div#dashboard section#totalMoney h2 {
+      color: #ffffff;
+      text-align: center; }
+  div#dashboard div#notes1 {
+    grid-row: 2;
+    grid-column: 5/6; }
+    div#dashboard div#notes1 img {
+      width: 25vw;
+      z-index: -50; }
   div#dashboard section#donators {
     background-color: #ffffff;
     border-radius: 30px;
-    width: 50%; }
+    position: absolute;
+    top: 10%;
+    right: 3vw;
+    color: #1b2440;
+    width: 20vw; }
     div#dashboard section#donators h1 {
       background-color: #fcc60e;
       border-top-left-radius: 30px;
@@ -35,27 +94,45 @@ div#dashboard {
       margin: 0;
       padding: 20px 15px;
       text-align: center;
-      font-size: 2vw; }
+      font-size: 1.3vw; }
     div#dashboard section#donators ul {
       display: -ms-grid;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); }
-  div#dashboard section#materialDonations {
-    width: 45vw;
+      display: grid; }
+      div#dashboard section#donators ul li {
+        list-style: none; }
+  div#dashboard section#lessons {
+    width: 18vw;
     border-radius: 30px;
     border: solid 5px #94d3f2;
-    color: #ffffff; }
+    grid-row: 3/5;
+    grid-column: 1;
+    margin-top: 30px; }
+    div#dashboard section#lessons div#notes2 img {
+      width: 15vw; }
+    div#dashboard section#lessons h1 {
+      text-align: center;
+      font-size: 1.3vw; }
+      div#dashboard section#lessons h1 span {
+        color: #de2235; }
+    div#dashboard section#lessons ul {
+      display: -ms-grid;
+      display: grid; }
+      div#dashboard section#lessons ul li {
+        list-style: none;
+        margin: 10px; }
+  div#dashboard section#materialDonations {
+    width: 890px;
+    border-radius: 30px;
+    border: solid 5px #94d3f2;
+    color: #ffffff;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    margin-top: 20px; }
     div#dashboard section#materialDonations div h1 {
       text-align: center;
-      font-size: 2vw; }
-    div#dashboard section#materialDonations div div img {
-      margin: 5px; }
-    div#dashboard section#materialDonations div div h1 {
-      text-align: center;
-      font-size: 2vw; }
-      div#dashboard section#materialDonations div div h1 span {
-        color: #de2235; }
-    div#dashboard section#materialDonations div div ul {
-      display: -ms-grid;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); }
+      font-size: 1.3vw; }
+    div#dashboard section#materialDonations div div {
+      padding-left: 20px; }
+      div#dashboard section#materialDonations div div img {
+        margin: 5px; }

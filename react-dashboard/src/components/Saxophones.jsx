@@ -27,7 +27,7 @@ class Saxophones extends Component {
     return (
       <div>
         {images}
-        <h2 className="instrumentNumber">Donated Saxofone: {number}</h2>
+        <h2 className="instrumentNumber">Donated Saxofones: {number}</h2>
       </div>
     );
   }

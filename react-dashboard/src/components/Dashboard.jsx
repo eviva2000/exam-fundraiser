@@ -4,6 +4,9 @@ import Donators from "./Donators.jsx";
 import MoneyDaily from "./MoneyDaily.jsx";
 import MaterialDonations from "./MaterialDonations.jsx";
 import firebase from "../modules/firebase";
+import Header from "./Header.jsx";
+import Notes from "./Notes.jsx";
+import Lessons from "./Lessons.jsx";
 
 //This is the parent Component
 export default class Dashboard extends Component {
@@ -80,14 +83,25 @@ export default class Dashboard extends Component {
     } else {
       return (
         <div id="dashboard">
+          <Header id="footer" />
           <section id="moneyDaily">
             <MoneyDaily data={this.state.data} />
           </section>
           <section id="totalMoney">
             <TotalMoney data={this.state.data} />
           </section>
+          <div id="notes1">
+            <Notes />
+          </div>
+
           <section id="donators">
             <Donators data={this.state.data} />
+          </section>
+          <section id="lessons">
+            <div id="notes2">
+              <Notes />
+            </div>
+            <Lessons materials={this.state.materials} />
           </section>
           <section id="materialDonations">
             <MaterialDonations
