@@ -1,6 +1,6 @@
 "use strict";
 let modal = document.querySelector(".modal");
-let selectionWrapper = document.querySelector(".selection-wrapper");
+let selectionWrapper = document.querySelector("#selection-wrapper");
 let moneybtn = document.querySelector(".select-money button");
 let moneyContainer = document.querySelector(".money-container");
 let materialContainer = document.querySelector(".material-container");
@@ -13,6 +13,7 @@ const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
 let temp = document.querySelector("template").content;
+
 // showing money donation modal //
 moneybtn.addEventListener("click", function() {
   moneyContainer.classList.remove("hidden");
@@ -130,12 +131,12 @@ function fetchEnpoint1() {
   fetch(endpoint)
     .then(res => res.json())
     .then(res => {
-      showDonators;
+      showDonators(res);
       progressBar(res);
     });
 }
 function showDonators(donatorlist) {
-  console.log(donatorlist);
+  console.log("donatorlist");
   donatorlist.sort(function(a, b) {
     var key1 = a.date;
     var key2 = b.date;
@@ -158,7 +159,7 @@ function showDonators(donatorlist) {
     } DK. at ${newDate}`;
 
     console.log(newDate);
-    document.querySelector(".pdonators").appendChild(clone);
+    document.querySelector(".pdonators div").appendChild(clone);
   });
 }
 fetchEnpoint1();
@@ -191,7 +192,7 @@ function showMaterialDonators(donatorlist) {
       donator.musicMaterial
     } at ${newDate}`;
 
-    document.querySelector(".pdonators").appendChild(clone);
+    document.querySelector(".pdonators div").appendChild(clone);
   });
 }
 addingMaterialDonators();
