@@ -5,7 +5,10 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  font-weight: 300; }
+  font-weight: 200;
+  margin: 0;
+  background-color: #1b2440;
+  transition: all 0.5s; }
 
 .modal {
   background-color: white;
@@ -25,43 +28,55 @@ body {
 .hidden {
   display: none; }
 
-.selection-wrapper {
+#selection-wrapper {
+  color: white;
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(15, 1fr);
-  padding: 1em 11em; }
-  .selection-wrapper .about-campaign {
-    border: 1px grey solid;
+  grid-template-columns: 1fr; }
+  #selection-wrapper .about-campaign,
+  #selection-wrapper .pdonators,
+  #selection-wrapper .select-money,
+  #selection-wrapper .select-material {
+    border: 2px solid #94d3f2;
     border-radius: 30px;
-    grid-column: 1/10;
-    grid-row: 1/10; }
-  .selection-wrapper .pdonators {
-    border: 1px grey solid;
-    border-radius: 30px;
-    grid-column: 11/17;
-    grid-row: 4/10;
-    max-height: 32vh;
-    overflow-y: scroll;
-    padding-left: 1em; }
-    .selection-wrapper .pdonators p {
-      font-size: 70%; }
-  .selection-wrapper .select-money {
-    grid-column: 5/10;
-    grid-row: 11/16; }
-  .selection-wrapper .select-material {
-    grid-column: 11/16;
-    grid-row: 11/16; }
-  .selection-wrapper .select-money,
-  .selection-wrapper .select-material {
-    border: 1px grey solid;
-    border-radius: 30px;
+    padding: 0 2em;
+    margin: 1em; }
+  #selection-wrapper img {
+    position: absolute;
+    width: 5em;
+    top: 56em;
+    left: 5em; }
+  #selection-wrapper .about-campaign,
+  #selection-wrapper .pdonators {
+    position: relative;
+    z-index: 1;
+    z-index: 100; }
+    #selection-wrapper .about-campaign h2,
+    #selection-wrapper .pdonators h2 {
+      color: #1b2440;
+      text-align: center;
+      font-size: 1em; }
+  #selection-wrapper .pdonators {
+    background: -webkit-linear-gradient(top, #fcc60e, #fcc60e 20%, transparent 1%, transparent); }
+    #selection-wrapper .pdonators div {
+      font-size: 16px;
+      font-weight: 100;
+      overflow: scroll;
+      height: 20vh; }
+  #selection-wrapper .about-campaign {
+    color: #1b2440;
+    background: -webkit-linear-gradient(top, #fcc60e, #fcc60e 33%, transparent 1%, transparent);
+    background-color: white; }
+  #selection-wrapper .about-campaign p {
+    margin-top: 1em; }
+  #selection-wrapper .select-money,
+  #selection-wrapper .select-material {
     display: flex;
     align-items: flex-end;
     justify-content: center;
     padding-bottom: 5%; }
-    .selection-wrapper .select-money button,
-    .selection-wrapper .select-material button {
-      height: 40px;
+    #selection-wrapper .select-money button,
+    #selection-wrapper .select-material button {
+      height: 20px;
       margin-top: 50%;
       background: #fcc60e;
       border: none;
@@ -70,7 +85,55 @@ body {
       font-family: "Poppins", sans-serif;
       color: #de2235;
       font-size: 0.8em;
-      width: 67%; }
+      width: 40%; }
+  @media only screen and (min-width: 600px) {
+    #selection-wrapper {
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      grid-template-rows: repeat(15, 1fr);
+      padding: 0 11em; }
+      #selection-wrapper img {
+        position: absolute;
+        width: 5em;
+        top: 77em;
+        left: 5em; }
+      #selection-wrapper .about-campaign {
+        grid-column: 1/10;
+        grid-row: 1/10;
+        background: -webkit-linear-gradient(top, #fcc60e, #fcc60e 15%, transparent 1%, transparent);
+        background-color: white; }
+      #selection-wrapper .about-campaign p {
+        margin-top: 3em; }
+      #selection-wrapper .pdonators {
+        grid-column: 11/17;
+        grid-row: 4/10;
+        max-height: 36vh;
+        padding-left: 1em; }
+      #selection-wrapper .select-money {
+        grid-column: 5/10;
+        grid-row: 11/16; }
+      #selection-wrapper .select-material {
+        grid-column: 11/16;
+        grid-row: 11/16; }
+      #selection-wrapper .select-money,
+      #selection-wrapper .select-material {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 5%; }
+        #selection-wrapper .select-money button,
+        #selection-wrapper .select-material button {
+          height: 40px;
+          margin-top: 50%;
+          background: #fcc60e;
+          border-radius: 2em;
+          font-family: "Poppins", sans-serif;
+          color: #de2235;
+          font-size: 0.8em;
+          width: 67%; } }
+  @media only screen and (min-width: 900px) {
+    #selection-wrapper img {
+      top: 75em; } }
 
 .material-container,
 .money-container {
@@ -79,9 +142,9 @@ body {
   align-items: center;
   justify-content: space-around;
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 10%; }
+  margin: 8% 9%;
+  width: 75vw;
+  padding: 4em; }
 
 .closebtn,
 .closebtn2 {
@@ -171,11 +234,179 @@ body {
     width: 3em;
     height: auto; }
 
+.comments {
+  height: 5vh;
+  padding: 1em;
+  border: solid 1px grey;
+  border-radius: 30px;
+  margin: 15%; }
+
+header {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header a {
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+    font-size: 17px; }
+  header .nav-container {
+    display: flex;
+    justify-content: flex-start; }
+
+.firstpage-container {
+  margin-bottom: 15%;
+  display: grid;
+  color: white;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr); }
+  .firstpage-container .firstpart {
+    grid-column: 1/2; }
+    .firstpage-container .firstpart #note {
+      width: 3em; }
+    .firstpage-container .firstpart #title {
+      width: 9em;
+      padding-left: 1em; }
+    .firstpage-container .firstpart p {
+      font-size: 10px; }
+    .firstpage-container .firstpart .p-wrapper {
+      padding: 1em; }
+    .firstpage-container .firstpart .btn-wrapper {
+      padding-left: 1em; }
+    .firstpage-container .firstpart a {
+      background-color: transparent;
+      border: solid 2px #fcc60e;
+      border-radius: 30px;
+      color: white;
+      padding: 1em;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.8em;
+      position: absolute;
+      top: 25em;
+      text-decoration: none; }
+      .firstpage-container .firstpart a:hover {
+        color: #1b2440;
+        background-color: #fcc60e;
+        cursor: pointer; }
+  .firstpage-container .secondpart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2/3; }
+    .firstpage-container .secondpart img {
+      width: 10em; }
+  .firstpage-container .thirdpart {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/3;
+    text-align: center; }
+    .firstpage-container .thirdpart h2 {
+      margin-top: 3em;
+      font-size: 1em; }
+    .firstpage-container .thirdpart img {
+      display: none; }
+  @media only screen and (min-width: 600px) {
+    .firstpage-container {
+      padding-top: 2em; }
+      .firstpage-container .firstpart {
+        padding-left: 3em;
+        grid-column: 1/2; }
+        .firstpage-container .firstpart #title {
+          width: 15em; }
+        .firstpage-container .firstpart #note {
+          width: 3em;
+          padding-left: 22em; }
+        .firstpage-container .firstpart a {
+          top: 38em; }
+        .firstpage-container .firstpart p {
+          font-size: 16px; }
+        .firstpage-container .firstpart .p-wrapper {
+          padding-right: 9em; }
+      .firstpage-container .secondpart {
+        grid-column: 2/3; }
+        .firstpage-container .secondpart img {
+          width: 20em;
+          margin-left: -36%; }
+      .firstpage-container .thirdpart {
+        grid-column: 1/3; }
+        .firstpage-container .thirdpart img {
+          display: block;
+          width: 4em; }
+        .firstpage-container .thirdpart h2 {
+          margin-top: 3em;
+          font-size: 2em; } }
+  @media only screen and (min-width: 1200px) {
+    .firstpage-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); }
+      .firstpage-container .firstpart {
+        padding-left: 7em;
+        grid-column: 1/2; }
+        .firstpage-container .firstpart #title {
+          width: 15em;
+          height: auto; }
+        .firstpage-container .firstpart #note {
+          width: 3em;
+          padding-left: 22em; }
+      .firstpage-container .secondpart {
+        grid-column: 2/3;
+        padding-left: 4em; }
+        .firstpage-container .secondpart img {
+          width: 22em; }
+      .firstpage-container .thirdpart {
+        grid-column: 3/4; }
+        .firstpage-container .thirdpart img {
+          width: 4em; }
+        .firstpage-container .thirdpart h2 {
+          margin-left: 13%;
+          text-align: start; } }
+
+.about-us {
+  margin-top: 15%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  overflow: hidden; }
+  .about-us .text {
+    grid-column: 2/5;
+    grid-row: 1/4;
+    background-color: #94d3f2;
+    border-radius: 30px;
+    padding: 1em; }
+  .about-us img {
+    grid-column: 4/6;
+    grid-row: 1/6;
+    width: 22em;
+    left: 59%;
+    background-color: transparent; }
+
+footer .footer {
+  margin: 9em 2em 5em 2em;
+  background-color: #2a3055;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+  height: 7em; }
+  footer .footer .img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: #1b2440; }
+    footer .footer .img-wrapper img {
+      width: 1em; }
+
 #emptyBar {
   position: relative;
-  height: 50px;
-  border-radius: 20px;
+  height: 30px;
+  border-radius: 30px;
   border: 2px white solid;
   background: -webkit-linear-gradient(left, white, white 1%, transparent 1%, transparent);
   background-size: 100%;
-  transition: all 2s; }
+  transition: all 2s;
+  margin: 13%; }

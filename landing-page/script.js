@@ -1,6 +1,6 @@
 "use strict";
 let modal = document.querySelector(".modal");
-let selectionWrapper = document.querySelector(".selection-wrapper");
+let selectionWrapper = document.querySelector("#selection-wrapper");
 let moneybtn = document.querySelector(".select-money button");
 let moneyContainer = document.querySelector(".money-container");
 let materialContainer = document.querySelector(".material-container");
@@ -13,6 +13,7 @@ const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
 let temp = document.querySelector("template").content;
+
 // showing money donation modal //
 moneybtn.addEventListener("click", function() {
   moneyContainer.classList.remove("hidden");
@@ -130,22 +131,35 @@ function fetchEnpoint1() {
   fetch(endpoint)
     .then(res => res.json())
     .then(res => {
-      showDonators;
+      showDonators(res);
       progressBar(res);
     });
 }
 function showDonators(donatorlist) {
+  console.log("donatorlist");
+  donatorlist.sort(function(a, b) {
+    var key1 = a.date;
+    var key2 = b.date;
+
+    if (key1 > key2) {
+      return -1;
+    } else if (key1 == key2) {
+      return 0;
+    } else {
+      return 1;
+    }
+  });
   donatorlist.forEach(donator => {
     console.log(donator);
     let clone = temp.cloneNode(true);
     let myDate = donator.date;
-    let newDate = myDate.substr(1, 9);
+    let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.amount
     } DK. at ${newDate}`;
 
     console.log(newDate);
-    document.querySelector(".pdonators").appendChild(clone);
+    document.querySelector(".pdonators div").appendChild(clone);
   });
 }
 fetchEnpoint1();
@@ -157,16 +171,28 @@ function addingMaterialDonators() {
     .then(showMaterialDonators);
 }
 function showMaterialDonators(donatorlist) {
+  donatorlist.sort(function(a, b) {
+    var key1 = a.date;
+    var key2 = b.date;
+
+    if (key1 > key2) {
+      return -1;
+    } else if (key1 == key2) {
+      return 0;
+    } else {
+      return 1;
+    }
+  });
   donatorlist.forEach(donator => {
     console.log(donator);
     let clone = temp.cloneNode(true);
     let myDate = donator.date;
-    let newDate = myDate.substr(1, 9);
+    let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.musicMaterial
     } at ${newDate}`;
 
-    document.querySelector(".pdonators").appendChild(clone);
+    document.querySelector(".pdonators div").appendChild(clone);
   });
 }
 addingMaterialDonators();
