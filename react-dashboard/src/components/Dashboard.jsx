@@ -7,6 +7,7 @@ import firebase from "../modules/firebase";
 import Header from "./Header.jsx";
 import Notes from "./Notes.jsx";
 import Lessons from "./Lessons.jsx";
+import MaterialDonators from "./MaterialDonators.jsx";
 
 //This is the parent Component
 export default class Dashboard extends Component {
@@ -30,6 +31,14 @@ export default class Dashboard extends Component {
     ).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
+      });
+    });
+    fetch(
+      "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
+    ).then(res => {
+      res.json().then(result => {
+        console.log(result);
+        this.setState({ materials: result });
       });
     });
     setInterval(() => {
@@ -95,7 +104,11 @@ export default class Dashboard extends Component {
           </div>
 
           <section id="donators">
-            <Donators data={this.state.data} />
+            <h1>Our Supporters</h1>
+            <ul>
+              <Donators data={this.state.data} />
+              <MaterialDonators materials={this.state.materials} />
+            </ul>
           </section>
           <section id="lessons">
             <Lessons materials={this.state.materials} />

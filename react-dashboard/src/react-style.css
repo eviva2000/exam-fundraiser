@@ -13,15 +13,17 @@ div#dashboard {
     font-size: 1vw; }
   div#dashboard div#header {
     grid-row: 1; }
-    div#dashboard div#header h1 {
+    div#dashboard div#header h1#greeting {
       text-align: center;
       font-size: 1.1vw;
       display: inline-block;
       margin-left: 55px; }
-    div#dashboard div#header button {
+    div#dashboard div#header h1#signOut {
       position: absolute;
       right: 55px;
-      top: 45px; }
+      text-align: center;
+      font-size: 1.1vw;
+      cursor: pointer; }
   div#dashboard section#moneyDaily {
     background-color: #ffffff;
     width: 900px;
@@ -83,7 +85,7 @@ div#dashboard {
     background-color: #ffffff;
     border-radius: 30px;
     position: absolute;
-    top: 15%;
+    top: 40vh;
     right: 3vw;
     color: #1b2440;
     width: 20vw; }
@@ -97,7 +99,9 @@ div#dashboard {
       font-size: 1.1vw; }
     div#dashboard section#donators ul {
       display: -ms-grid;
-      display: grid; }
+      display: grid;
+      height: 450px;
+      overflow-y: scroll; }
       div#dashboard section#donators ul li {
         list-style: none;
         margin: 10px; }
@@ -110,11 +114,12 @@ div#dashboard {
         div#dashboard section#donators ul li p.date {
           margin: 0; }
   div#dashboard section#lessons {
-    width: 69.5vw;
+    width: 19.5vw;
     border-radius: 30px;
     border: solid 5px #94d3f2;
-    grid-row: 4;
-    grid-column: 1/6; }
+    position: absolute;
+    top: 101vh;
+    right: 3vw; }
     div#dashboard section#lessons h1 {
       text-align: center;
       font-size: 1.1vw;
@@ -124,7 +129,8 @@ div#dashboard {
     div#dashboard section#lessons ul {
       display: -ms-grid;
       display: grid;
-      grid-template-columns: repeat(4, 1fr); }
+      height: 450px;
+      overflow-y: scroll; }
       div#dashboard section#lessons ul li {
         list-style: none;
         margin: 10px; }
@@ -139,7 +145,7 @@ div#dashboard {
         div#dashboard section#lessons ul li p.date {
           margin: 0; }
   div#dashboard section#materialDonations {
-    width: 50vw;
+    width: 51.5vw;
     border-radius: 30px;
     border: solid 5px #94d3f2;
     color: #ffffff;
@@ -154,7 +160,7 @@ div#dashboard {
         margin: 5px; }
   div#dashboard div#notes2 {
     position: absolute;
-    top: 50%; }
+    top: 80%; }
     div#dashboard div#notes2 img {
       width: 20vw;
       margin-left: 25px;
