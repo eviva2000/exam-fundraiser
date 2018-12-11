@@ -4,10 +4,12 @@ import LineChart from "react-linechart";
 
 export default class ChartTemplate extends Component {
   render() {
-    const points = this.props.data.map((item, index) => ({
+    const points = this.props.data.map(item => ({
       x: item.key,
       y: item.value
     }));
+
+    //Sort data by dates
     const sorted = points.sort(function(a, b) {
       var key1 = a.x;
       var key2 = b.x;
@@ -21,7 +23,8 @@ export default class ChartTemplate extends Component {
       }
     });
 
-    console.table(sorted);
+    //Create array of data for Linechart
+    //Source: http://rafaelquintanilha.com/introducing-react-line-chart/
 
     let dataxy = [
       {
@@ -34,7 +37,7 @@ export default class ChartTemplate extends Component {
       <div className="App">
         <h1>Daily Money Donated</h1>
         <LineChart
-          height={425}
+          height={360}
           width={850}
           title={"Daily Money Donated"}
           ticks={dataxy[0].points.length - 1}

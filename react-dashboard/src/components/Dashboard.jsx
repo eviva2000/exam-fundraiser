@@ -98,9 +98,6 @@ export default class Dashboard extends Component {
             <Donators data={this.state.data} />
           </section>
           <section id="lessons">
-            <div id="notes2">
-              <Notes />
-            </div>
             <Lessons materials={this.state.materials} />
           </section>
           <section id="materialDonations">
@@ -109,6 +106,9 @@ export default class Dashboard extends Component {
               materials={this.state.materials}
             />
           </section>
+          <div id="notes2">
+            <Notes />
+          </div>
         </div>
       );
     }
