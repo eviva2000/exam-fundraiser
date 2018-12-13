@@ -13,7 +13,7 @@ export default class Lessons extends Component {
     return (
       <React.Fragment>
         <h1>
-          Total amount of Teaching hours donated: <span>{sum}</span>{" "}
+          Teaching Hours Donated: <span>{sum}</span>{" "}
         </h1>
         <ul>
           {this.props.materials.map(item => (
@@ -22,7 +22,8 @@ export default class Lessons extends Component {
                 {item.hours} hours of {item.profile}
               </h2>
               <h2>{item.name}</h2>
-              <p className="comments">{item.email}</p>
+              <p className="comments">{item.comment}</p>
+              <p className="email">{item.email}</p>
               <p className="date">{item.date.toString().slice(0, 10)}</p>
             </li>
           ))}

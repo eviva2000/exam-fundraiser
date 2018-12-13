@@ -14,7 +14,7 @@ export default class Guitars extends Component {
     let number = guitarArray.length;
     for (let i = 0; i < number; i++) {
       images.push(
-        <img key={Math.random()} src={Guitar} alt={"Guitar"} height="170" />
+        <img key={Math.random()} src={Guitar} alt={"Guitar"} height="100" />
       );
     }
     return (

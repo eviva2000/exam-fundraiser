@@ -20,7 +20,7 @@ export default class CompositionBooks extends Component {
           key={Math.random()}
           src={Book}
           alt={"Composition Books"}
-          height="120"
+          height="100"
         />
       );
     }
