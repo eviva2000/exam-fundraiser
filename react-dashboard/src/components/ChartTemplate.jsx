@@ -38,14 +38,14 @@ export default class ChartTemplate extends Component {
         <h1>Daily Money Donated</h1>
         <LineChart
           height={360}
-          width={850}
+          width={950}
           title={"Daily Money Donated"}
           ticks={dataxy[0].points.length - 1}
           data={dataxy}
           xLabel="Dates"
           yLabel="DKK"
           yMin="0"
-          onPointHover={obj => `x: ${obj.x}<br />y: ${obj.y}`}
+          // onPointHover={obj => `x: ${obj.x}<br />y: ${obj.y}`}
           xParser={d3.timeParse("%Y-%m-%d")}
           xDisplay={d3.timeFormat("%d %b")}
           hideYLabel="true"

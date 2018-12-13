@@ -102,7 +102,6 @@ export default class Dashboard extends Component {
           <div id="notes1">
             <Notes />
           </div>
-
           <section id="donators">
             <h1>Our Supporters</h1>
             <ul>

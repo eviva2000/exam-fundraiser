@@ -13,7 +13,7 @@ export default class Lessons extends Component {
     return (
       <React.Fragment>
         <h1>
-          Total amount of Teaching hours donated: <span>{sum}</span>{" "}
+          Teaching Hours Donated: <span>{sum}</span>{" "}
         </h1>
         <ul>
           {this.props.materials.map(item => (

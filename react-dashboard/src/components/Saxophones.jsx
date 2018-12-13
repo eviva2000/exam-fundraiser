@@ -19,13 +19,16 @@ class Saxophones extends Component {
         <img
           key={Math.random()}
           src={Saxophone}
-          alt={"saxofone"}
-          height="120"
+          alt={"saxophone"}
+          height="100"
         />
       );
     }
+    if (number > 4) {
+      document.querySelectorAll("#saxophones img").height = "10";
+    }
     return (
-      <div>
+      <div id="saxophones">
         {images}
         <h2 className="instrumentNumber">Donated Saxofones: {number}</h2>
       </div>
