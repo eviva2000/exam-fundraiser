@@ -1,34 +1,41 @@
+body {
+  margin: 0;
+  background-color: #1b2440; }
+
 div#dashboard {
   position: relative;
   font-family: "Poppins";
-  background-color: #1b2440;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto 1fr auto auto;
+  grid-gap: 15px;
   color: #ffffff;
   padding: 3vw; }
   div#dashboard h2 {
     font-size: 1vw; }
   div#dashboard div#header {
+    grid-column: 1/7;
     grid-row: 1;
-    height: 100px; }
-    div#dashboard div#header h1 {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); }
+    div#dashboard div#header h1#greeting {
       text-align: center;
-      font-size: 1.3vw;
-      display: inline-block;
-      margin-left: 55px; }
-    div#dashboard div#header button {
-      position: absolute;
-      right: 55px;
-      top: 45px; }
+      font-size: 1.1vw;
+      text-align: left; }
+    div#dashboard div#header h1#signOut {
+      text-align: center;
+      font-size: 1.1vw;
+      cursor: pointer;
+      grid-column: 6;
+      text-align: right; }
   div#dashboard section#moneyDaily {
     background-color: #ffffff;
-    width: 900px;
+    width: 999px;
     border-radius: 30px;
     grid-row: 2;
-    grid-column: 2/4;
-    margin-left: 3vw;
+    grid-column: 1/3;
     margin-bottom: 30px;
     z-index: 100; }
     div#dashboard section#moneyDaily div.App h1 {
@@ -38,7 +45,7 @@ div#dashboard {
       margin: 0;
       padding: 20px 15px;
       text-align: center;
-      font-size: 1.3vw;
+      font-size: 1.1vw;
       color: #1b2440; }
     div#dashboard section#moneyDaily div.App div:nth-child(2) svg {
       padding-left: 20px; }
@@ -50,20 +57,18 @@ div#dashboard {
         stroke-width: 5; }
   div#dashboard section#totalMoney {
     width: 18vw;
-    height: 540px;
     border-radius: 30px;
     border: solid 5px #94d3f2;
     color: #ffffff;
-    grid-row: 2/4;
-    grid-column: 1;
-    margin-bottom: 20px; }
+    grid-row: 3;
+    grid-column: 1; }
     div#dashboard section#totalMoney img {
       width: 40%;
       margin: 15px auto 20px auto;
       display: block; }
     div#dashboard section#totalMoney h1:nth-child(2) {
       text-align: center;
-      font-size: 1.3vw;
+      font-size: 1.1vw;
       margin: 15px auto 5px auto; }
     div#dashboard section#totalMoney h1:nth-child(3) {
       text-align: center;
@@ -83,7 +88,7 @@ div#dashboard {
     background-color: #ffffff;
     border-radius: 30px;
     position: absolute;
-    top: 10%;
+    top: 13.5vh;
     right: 3vw;
     color: #1b2440;
     width: 20vw; }
@@ -94,45 +99,76 @@ div#dashboard {
       margin: 0;
       padding: 20px 15px;
       text-align: center;
-      font-size: 1.3vw; }
+      font-size: 1.1vw; }
     div#dashboard section#donators ul {
       display: -ms-grid;
-      display: grid; }
+      display: grid;
+      height: 450px;
+      overflow-y: scroll; }
       div#dashboard section#donators ul li {
-        list-style: none; }
+        list-style: none;
+        margin: 10px; }
+        div#dashboard section#donators ul li h2 {
+          margin: 0; }
+        div#dashboard section#donators ul li p.comments {
+          margin: 0; }
+        div#dashboard section#donators ul li p.email {
+          margin: 0; }
+        div#dashboard section#donators ul li p.date {
+          margin: 0; }
   div#dashboard section#lessons {
-    width: 18vw;
+    width: 19.5vw;
     border-radius: 30px;
     border: solid 5px #94d3f2;
-    grid-row: 3/5;
-    grid-column: 1;
-    margin-top: 30px; }
-    div#dashboard section#lessons div#notes2 img {
-      width: 15vw; }
+    position: absolute;
+    top: 75vh;
+    right: 3vw; }
     div#dashboard section#lessons h1 {
       text-align: center;
-      font-size: 1.3vw; }
+      font-size: 1.1vw;
+      padding: 15px; }
       div#dashboard section#lessons h1 span {
         color: #de2235; }
     div#dashboard section#lessons ul {
-      display: -ms-grid;
-      display: grid; }
+      height: 450px;
+      overflow-y: scroll; }
       div#dashboard section#lessons ul li {
         list-style: none;
         margin: 10px; }
+        div#dashboard section#lessons ul li h2:first-child {
+          margin: 0; }
+        div#dashboard section#lessons ul li h2:nth-child(2) {
+          margin: 0; }
+        div#dashboard section#lessons ul li p.comments {
+          margin: 0; }
+        div#dashboard section#lessons ul li p.email {
+          margin: 0; }
+        div#dashboard section#lessons ul li p.date {
+          margin: 0; }
   div#dashboard section#materialDonations {
-    width: 890px;
+    width: 45vw;
     border-radius: 30px;
     border: solid 5px #94d3f2;
     color: #ffffff;
-    position: absolute;
-    top: 15%;
-    left: 25%;
-    margin-top: 20px; }
-    div#dashboard section#materialDonations div h1 {
+    grid-row: 3;
+    grid-column: 2/6;
+    margin-left: 3vw; }
+    div#dashboard section#materialDonations h1 {
       text-align: center;
-      font-size: 1.3vw; }
-    div#dashboard section#materialDonations div div {
-      padding-left: 20px; }
-      div#dashboard section#materialDonations div div img {
-        margin: 5px; }
+      font-size: 1.1vw; }
+    div#dashboard section#materialDonations div#container {
+      margin-top: 50px;
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: auto auto; }
+      div#dashboard section#materialDonations div#container div {
+        padding-left: 20px; }
+        div#dashboard section#materialDonations div#container div img {
+          margin: 5px; }
+  div#dashboard div#notes2 {
+    grid-row: 4;
+    grid-column: 2/4; }
+    div#dashboard div#notes2 img {
+      width: 20vw;
+      margin-left: 25px;
+      display: block; }

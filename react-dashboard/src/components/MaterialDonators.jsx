@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 
 //Gets properties from the parent Dashboard, maps through the array and returns a list of amounts and names.
-export default class Donators extends Component {
+export default class MaterialDonators extends Component {
   render() {
-    // let formatedDate = formatTime(dateType);
-    return this.props.data.map(item => (
+    return this.props.materials.map(item => (
       <li key={item.id}>
-        <h2>{item.amount} DKK</h2>
+        <h2>{item.musicMaterial}</h2>
         <h2>{item.name}</h2>
         <p className="comments">{item.comment}</p>
         <p className="email">{item.email}</p>
