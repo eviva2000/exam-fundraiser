@@ -13,7 +13,6 @@ export default class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
-      user: true,
       data: [],
       materials: []
     }; //Current state returns an empty array
@@ -25,6 +24,16 @@ export default class Dashboard extends Component {
   //Here we fetch the data from the external database.
 
   componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log("in");
+        this.setState({ user: user });
+      } else {
+        console.log("out");
+        this.setState({ user: null });
+      }
+    });
+
     fetch(
       "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
     ).then(res => {
@@ -73,8 +82,8 @@ export default class Dashboard extends Component {
     if (!this.state.user) {
       return (
         <form method="get">
-          <input type="email" id="email" name="email" />
-          <input type="password" id="password" name="password" />
+          <input type="email" id="email" name="email" required />
+          <input type="password" id="password" name="password" required />
           <button type="submit" id="login" onClick={this.authorize}>
             Log In
           </button>

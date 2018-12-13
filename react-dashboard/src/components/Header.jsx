@@ -5,7 +5,7 @@ export default class Header extends Component {
     return (
       <div id="header">
         <h1>Hi Admin!</h1>
-        <button>Sign Out</button>
+        <button>Log Out</button>
       </div>
     );
   }
