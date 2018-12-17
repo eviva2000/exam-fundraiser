@@ -220,3 +220,7 @@ function progressBar(data) {
     101 - percentRaised + "%";
   document.querySelector("#emptyBar h2").style.opacity = "1";
 }
+
+if (document.querySelector('input[id="m1"]:checked')) {
+  additionalLessonForm.classList.add("hidden");
+}

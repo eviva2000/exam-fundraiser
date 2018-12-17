@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Violin from "../violin.png";
+import Violin from "../Assets/violin.png";
 
 export default class Violins extends Component {
   render() {
@@ -16,11 +16,11 @@ export default class Violins extends Component {
     let number = violinArray.length;
     for (let i = 0; i < number; i++) {
       images.push(
-        <img key={Math.random()} src={Violin} alt={"Violin"} height="120" />
+        <img key={Math.random()} src={Violin} alt={"Violin"} height="100" />
       );
     }
     return (
-      <div>
+      <div id="violins">
         {images}
         <h2 className="instrumentNumber">Donated Violins: {number}</h2>
       </div>
