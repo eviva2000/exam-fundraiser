@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Notes from "../note.png";
+import Notes from "../Assets/note.png";
 
 export default class Donators extends Component {
   render() {

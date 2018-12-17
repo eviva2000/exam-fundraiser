@@ -215,3 +215,7 @@ function progressBar(data) {
   document.querySelector("#emptyBar").style.backgroundSize =
     100 * percentRaised + "%";
 }
+
+if (document.querySelector('input[id="m1"]:checked')) {
+  additionalLessonForm.classList.add("hidden");
+}

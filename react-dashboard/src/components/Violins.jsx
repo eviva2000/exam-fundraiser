@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Violin from "../violin.png";
+import Violin from "../Assets/violin.png";
 
 export default class Violins extends Component {
   render() {

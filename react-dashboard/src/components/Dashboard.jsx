@@ -46,7 +46,6 @@ export default class Dashboard extends Component {
       "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
     ).then(res => {
       res.json().then(result => {
-        console.log(result);
         this.setState({ materials: result });
       });
     });
@@ -64,7 +63,6 @@ export default class Dashboard extends Component {
           "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
         ).then(res => {
           res.json().then(result => {
-            console.log(result);
             this.setState({ materials: result });
           });
         });

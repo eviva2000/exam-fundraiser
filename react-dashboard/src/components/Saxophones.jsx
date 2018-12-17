@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Saxophone from "../saxophone.png";
+import Saxophone from "../Assets/saxophone.png";
 
 class Saxophones extends Component {
   render() {

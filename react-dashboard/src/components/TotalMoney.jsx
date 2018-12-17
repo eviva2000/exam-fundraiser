@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MainImage from "../mainpic.png";
+import MainImage from "../Assets/mainpic.png";
 
 export default class TotalMoney extends Component {
   render() {

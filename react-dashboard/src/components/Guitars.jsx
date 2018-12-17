@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Guitar from "../guitar.png";
+import Guitar from "../Assets/guitar.png";
 
 export default class Guitars extends Component {
   render() {
