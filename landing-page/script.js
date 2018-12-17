@@ -215,10 +215,14 @@ function progressBar(data) {
   document.querySelector("#emptyBar").style.backgroundSize =
     100 * percentRaised + "%";
   //put current amount collected and drag it along with the gradient
-  document.querySelector("#emptyBar h2").textContent = totalDonated;
-  document.querySelector("#emptyBar h2").style.right =
-    101 - percentRaised + "%";
-  document.querySelector("#emptyBar h2").style.opacity = "1";
+  let donatedSumDisplay = document.querySelector("#emptyBar #currentSum");
+  donatedSumDisplay.textContent = totalDonated;
+  donatedSumDisplay.style.right = 101 - percentRaised + "%";
+  //some animation
+  donatedSumDisplay.style.opacity = "1";
+  //the goal display
+  document.querySelector("#emptyBar #goal").textContent =
+    "The Goal: " + goal + " DKK";
 }
 
 if (document.querySelector('input[id="m1"]:checked')) {
