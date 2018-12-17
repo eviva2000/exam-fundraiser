@@ -225,6 +225,8 @@ function progressBar(data) {
     "The Goal: " + goal + " DKK";
 }
 
-if (document.querySelector('input[id="m1"]:checked')) {
+if (document.querySelector('input[id="m1"]') == checked) {
   additionalLessonForm.classList.add("hidden");
+
+  console.log("works");
 }
