@@ -24,7 +24,6 @@ export default class MoneyDaily extends Component {
         });
       })
       .entries(dateArray);
-    console.log(properties);
 
     return (
       <React.Fragment>

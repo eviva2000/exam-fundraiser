@@ -9,7 +9,7 @@ export default class Lessons extends Component {
     function add(a, b) {
       return a + b;
     }
-    console.log(sum);
+
     return (
       <React.Fragment>
         <h1>
