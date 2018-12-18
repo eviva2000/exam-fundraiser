@@ -27,10 +27,8 @@ export default class Dashboard extends Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log("in");
         this.setState({ user: user });
       } else {
-        console.log("out");
         this.setState({ user: null });
       }
     });
