@@ -4,13 +4,16 @@ import Donators from "./Donators.jsx";
 import MoneyDaily from "./MoneyDaily.jsx";
 import MaterialDonations from "./MaterialDonations.jsx";
 import firebase from "../modules/firebase";
+import Header from "./Header.jsx";
+import Notes from "./Notes.jsx";
+import Lessons from "./Lessons.jsx";
+import MaterialDonators from "./MaterialDonators.jsx";
 
 //This is the parent Component
 export default class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
-      user: true,
       data: [],
       materials: []
     }; //Current state returns an empty array
@@ -22,11 +25,28 @@ export default class Dashboard extends Component {
   //Here we fetch the data from the external database.
 
   componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log("in");
+        this.setState({ user: user });
+      } else {
+        console.log("out");
+        this.setState({ user: null });
+      }
+    });
+
     fetch(
       "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
     ).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
+      });
+    });
+    fetch(
+      "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
+    ).then(res => {
+      res.json().then(result => {
+        this.setState({ materials: result });
       });
     });
     setInterval(() => {
@@ -43,7 +63,6 @@ export default class Dashboard extends Component {
           "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
         ).then(res => {
           res.json().then(result => {
-            console.log(result);
             this.setState({ materials: result });
           });
         });
@@ -70,8 +89,8 @@ export default class Dashboard extends Component {
     if (!this.state.user) {
       return (
         <form method="get">
-          <input type="email" id="email" name="email" />
-          <input type="password" id="password" name="password" />
+          <input type="email" id="email" name="email" required />
+          <input type="password" id="password" name="password" required />
           <button type="submit" id="login" onClick={this.authorize}>
             Log In
           </button>
@@ -80,14 +99,25 @@ export default class Dashboard extends Component {
     } else {
       return (
         <div id="dashboard">
+          <Header id="footer" />
           <section id="moneyDaily">
             <MoneyDaily data={this.state.data} />
           </section>
           <section id="totalMoney">
             <TotalMoney data={this.state.data} />
           </section>
+          <div id="notes1">
+            <Notes />
+          </div>
           <section id="donators">
-            <Donators data={this.state.data} />
+            <h1>Our Supporters</h1>
+            <ul>
+              <Donators data={this.state.data} />
+              <MaterialDonators materials={this.state.materials} />
+            </ul>
+          </section>
+          <section id="lessons">
+            <Lessons materials={this.state.materials} />
           </section>
           <section id="materialDonations">
             <MaterialDonations
@@ -95,6 +125,9 @@ export default class Dashboard extends Component {
               materials={this.state.materials}
             />
           </section>
+          <div id="notes2">
+            <Notes />
+          </div>
         </div>
       );
     }

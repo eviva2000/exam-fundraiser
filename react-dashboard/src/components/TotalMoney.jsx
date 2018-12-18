@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MainImage from "../Assets/mainpic.png";
 
 export default class TotalMoney extends Component {
   render() {
@@ -13,8 +14,11 @@ export default class TotalMoney extends Component {
 
     return (
       <React.Fragment>
-        <h1>Total Amount of Money Donated</h1>
-        <h1>{sum}</h1>
+        <img src={MainImage} alt={"saxofone"} />
+        <h1>Total Money Raised</h1>
+        <h1>{sum} DKK</h1>
+        <h2>Goal: 50 000 DKK</h2>
+        <h2> Today is: {new Date().toString().slice(4, 15)}</h2>
       </React.Fragment>
     );
   }

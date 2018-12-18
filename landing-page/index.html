@@ -12,16 +12,55 @@
     <title>Fundraiser-project</title>
   </head>
   <body>
-    <section id="progress-section">
-      <div id="emptyBar"><div id="filledBar"></div></div>
+    <header>
+      <div class="nav-container">
+        <a href="#">Contact</a> <a href="#">About us</a>
+      </div>
+      <div class="login"><a href="#">Login</a></div>
+    </header>
+    <section class="firstpage-container">
+      <div class="firstpart">
+        <img id="title" src="assets/images/the name.png" alt="title" />
+        <div class="p-wrapper">
+          <p>
+            We are a group of students who have a dream of turning their
+            amateure band to a great , proffesional jaz jam
+          </p>
+        </div>
+        <img id="note" src="assets/images/note2.png" alt="note" />
+        <div class="btn-wrapper">
+          <a href="#selection-wrapper">About this campaign</a>
+        </div>
+      </div>
+      <div class="secondpart"><img src="assets/images/mainpic.png" /></div>
+      <div class="thirdpart">
+        <h2>
+          Support us to grow<br />
+          our talents
+        </h2>
+        <section id="progress-section">
+          <div id="emptyBar"><div id="filledBar"></div></div>
+        </section>
+        <img src="assets/images/note withoutlines.png" />
+      </div>
     </section>
 
-    <div class="selection-wrapper">
-      <section class="about-campaign"></section>
-      <section class="pdonators scroller"></section>
-      <section class="select-money"><button>Donate money</button></section>
+    <div id="selection-wrapper">
+      <img src="assets/images/note3.png" />
+      <section class="about-campaign">
+        <h2>About this campaign</h2>
+        <p>
+          Here is some text about the campaign.Here is some text about the
+          campaign.Here is some text about the campaign.
+        </p>
+      </section>
+      <section class="pdonators">
+        <h2>Our Supporters</h2>
+        <div></div>
+      </section>
+      <section class="select-money"><button>Donate Money</button></section>
       <section class="select-material">
-        <button>Donate materials</button>
+        <button>Donate Materials</button>
       </section>
     </div>
 
@@ -92,14 +131,6 @@
       </form>
       <form id="userInfoForm1">
         <div class="input">
-          <!--
-            <div class="experiment">
-              <p>
-                use <span><img src="images/fb.png"/></span>
-              </p>
-            </div>
-          -->
-
           <label>Your name</label> <span class="required">*</span>
           <div class="face">
             <input type="text" name="name" placeholder="Full name" required />
@@ -220,9 +251,49 @@
         <input type="submit" name="submit" value="Donate" />
       </form>
     </section>
+    <section class="about-us">
+      <div class="text">
+        <h2>who we are</h2>
+        <p>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of
+          letters, as opposed to using 'Content here, content here', making it
+          look like readable English. Many desktop publishing packages and web
+          page editors now use Lorem Ipsum as their default model text, and a
+          search for 'lorem ipsum' will uncover many web sites still in their
+          infancy.
+        </p>
+      </div>
+      <img src="assets/images/saxofone.png" />
+    </section>
     <template class="donators">
       <article><p></p></article>
     </template>
+    <footer>
+      <div class="footer">
+        <a target="_blank" href="https://www.facebook.com/">
+          <div class="img-wrapper">
+            <img src="assets/images/instagram.png" alt="fb" />
+          </div>
+        </a>
+        <a target="_blank" href="https://www.facebook.com/">
+          <div class="img-wrapper">
+            <img src="assets/images/fbwhite.png" alt="fb" />
+          </div>
+        </a>
+        <a target="_blank" href="https://www.facebook.com/">
+          <div class="img-wrapper">
+            <img src="assets/images/twitter.png" alt="fb" />
+          </div>
+        </a>
+        <a target="_blank" href="https://www.facebook.com/">
+          <div class="img-wrapper">
+            <img src="assets/images/mail.png" alt="fb" />
+          </div>
+        </a>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
