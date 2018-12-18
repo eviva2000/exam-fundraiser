@@ -129,12 +129,12 @@ body {
         #selection-wrapper .select-material button {
           height: 40px;
           margin-top: 50%;
-          background: #fcc60e;
           border-radius: 2em;
           font-family: "Poppins", sans-serif;
           color: #de2235;
           font-size: 0.8em;
-          width: 67%; } }
+          width: 67%;
+          border: 2px solid #de2235; } }
   @media only screen and (min-width: 900px) {
     #selection-wrapper img {
       top: 75em; } }

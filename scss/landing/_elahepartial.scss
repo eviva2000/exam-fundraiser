@@ -161,12 +161,12 @@ body {
       button {
         height: 40px;
         margin-top: 50%;
-        background: $yellow-color;
         border-radius: 2em;
         font-family: $font;
         color: $red-color;
         font-size: 0.8em;
         width: 67%;
+        border: 2px solid $red-color;
       }
     }
   }
