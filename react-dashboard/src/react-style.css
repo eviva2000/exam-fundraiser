@@ -27,6 +27,12 @@ div#dashboard {
       text-align: center;
       font-size: 1.1vw;
       text-align: left; }
+    div#dashboard div#header h1#signUp {
+      text-align: center;
+      font-size: 1.1vw;
+      cursor: pointer;
+      grid-column: 2;
+      text-align: right; }
     div#dashboard div#header h1#signOut {
       text-align: center;
       font-size: 1.1vw;
