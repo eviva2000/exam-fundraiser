@@ -8,6 +8,7 @@ import Header from "./Header.jsx";
 import Notes from "./Notes.jsx";
 import Lessons from "./Lessons.jsx";
 import MaterialDonators from "./MaterialDonators.jsx";
+import SignUpForm from "./SignUpForm.jsx";
 
 //This is the parent Component
 export default class Dashboard extends Component {
@@ -15,8 +16,10 @@ export default class Dashboard extends Component {
     super();
     this.state = {
       data: [],
-      materials: []
+      materials: [],
+      createAccount: false
     }; //Current state returns an empty array
+    this.signUpStatus = this.signUpStatus.bind(this); //bind this to switch sign up form status
 
     this.authorize = this.authorize.bind(this); //bind this state to authorize function so that these values could be read/changed in authorize function
   }
@@ -66,6 +69,19 @@ export default class Dashboard extends Component {
       }
     }, 20000);
   }
+  //switch state for account creation form
+  signUpStatus(e) {
+    e.preventDefault();
+    if (this.state.createAccount) {
+      this.setState({
+        createAccount: false
+      });
+    } else {
+      this.setState({
+        createAccount: true
+      });
+    }
+  }
   //authorize the user according to input details (firebase)
   authorize(e) {
     e.preventDefault();
@@ -93,10 +109,13 @@ export default class Dashboard extends Component {
           </button>
         </form>
       );
+    }
+    if (this.state.createAccount) {
+      return <SignUpForm status={this.signUpStatus} />;
     } else {
       return (
         <div id="dashboard">
-          <Header id="footer" />
+          <Header status={this.signUpStatus} />
           <section id="moneyDaily">
             <MoneyDaily data={this.state.data} />
           </section>
