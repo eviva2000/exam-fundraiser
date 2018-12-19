@@ -1,3 +1,6 @@
+img#book {
+  border: solid 2px black; }
+
 body {
   margin: 0;
   background-color: #1b2440; }
@@ -87,6 +90,8 @@ div#dashboard {
   div#dashboard section#donators {
     background-color: #ffffff;
     border-radius: 30px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
     position: absolute;
     top: 13.5vh;
     right: 3vw;
@@ -148,12 +153,17 @@ div#dashboard {
   div#dashboard section#materialDonations {
     width: 45vw;
     border-radius: 30px;
-    border: solid 5px #94d3f2;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #1b2440;
     grid-row: 3;
     grid-column: 2/6;
     margin-left: 3vw; }
     div#dashboard section#materialDonations h1 {
+      background-color: #fcc60e;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin: 0;
+      padding: 20px 15px;
       text-align: center;
       font-size: 1.1vw; }
     div#dashboard section#materialDonations div#container {

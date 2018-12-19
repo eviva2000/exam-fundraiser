@@ -3,6 +3,9 @@ $yellow: #fcc60e;
 $blue: #1b2440;
 $red: #de2235;
 $light-blue: #94d3f2;
+img#book {
+  border: solid 2px black;
+}
 
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == phone {
@@ -156,6 +159,8 @@ div#dashboard {
   section#donators {
     background-color: $light-color;
     border-radius: 30px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
     position: absolute;
     top: 13.5vh;
     right: 3vw;
@@ -231,13 +236,13 @@ div#dashboard {
   section#materialDonations {
     width: 45vw;
     border-radius: 30px;
-    border: solid 5px $light-blue;
-    color: $light-color;
+    background-color: $light-color;
+    color: $blue;
     grid-row: 3;
     grid-column: 2/6;
     margin-left: 3vw;
     h1 {
-      @include h1;
+      @include yellowH1;
     }
     div#container {
       margin-top: 50px;
@@ -249,6 +254,7 @@ div#dashboard {
         img {
           margin: 5px;
         }
+
         h2 {
         }
       }

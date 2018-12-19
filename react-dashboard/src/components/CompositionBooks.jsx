@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Book from "../Assets/book.jpg";
+import Book from "../Assets/book.png";
 
 export default class CompositionBooks extends Component {
   render() {
@@ -19,8 +19,9 @@ export default class CompositionBooks extends Component {
         <img
           key={Math.random()}
           src={Book}
+          id="book"
           alt={"Composition Books"}
-          height="100"
+          height="80"
         />
       );
     }

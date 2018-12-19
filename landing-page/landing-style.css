@@ -51,8 +51,7 @@ body {
   #selection-wrapper .about-campaign,
   #selection-wrapper .pdonators {
     position: relative;
-    z-index: 1;
-    z-index: 100; }
+    z-index: 1; }
     #selection-wrapper .about-campaign h2,
     #selection-wrapper .pdonators h2 {
       color: #1b2440;
@@ -62,15 +61,12 @@ body {
       border-top-left-radius: 30px;
       border-top-right-radius: 30px;
       margin: 0;
-      padding: 20px 0; }
+      padding: 20px 0;
+      z-index: 100; }
   #selection-wrapper .pdonators {
-<<<<<<< HEAD
     border: 2px solid #94d3f2;
     border-radius: 30px;
     padding-left: 0; }
-=======
-    background: -webkit-linear-gradient(top, #94d3f2, #94d3f2 20%, transparent 1%, transparent); }
->>>>>>> a36968bbb599de415383baa6976e62c1129a3688
     #selection-wrapper .pdonators div {
       font-size: 16px;
       font-weight: 100;

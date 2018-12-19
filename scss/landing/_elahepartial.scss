@@ -66,23 +66,13 @@ body {
       border-top-right-radius: 30px;
       margin: 0;
       padding: 20px 0;
+      z-index: 100;
     }
-    z-index: 100;
   }
   .pdonators {
-<<<<<<< HEAD
     border: 2px solid $light-blue;
     border-radius: 30px;
     padding-left: 0;
-=======
-    background: -webkit-linear-gradient(
-      top,
-      $light-blue,
-      $light-blue 20%,
-      transparent 1%,
-      transparent
-    );
->>>>>>> a36968bbb599de415383baa6976e62c1129a3688
     div {
       font-size: 16px;
       font-weight: 100;
@@ -111,7 +101,6 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 5%;
-
     button {
       height: 20px;
       margin-top: 10%;
@@ -534,7 +523,6 @@ footer {
     z-index: 100;
     color: $light-blue;
   }
-
   img {
     width: 100%;
     border-radius: 30px;
