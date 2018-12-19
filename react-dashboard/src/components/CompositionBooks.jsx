@@ -8,11 +8,11 @@ export default class CompositionBooks extends Component {
     let instrumentArray = this.props.materials.map(
       instruments => instruments.musicMaterial
     );
-
+    //Filters all donated compositions in one array.
     let compositionArray = instrumentArray.filter(
       composition => composition === "compositions"
     );
-
+    //Use the number of donated materials to create the same number of images.
     let number = compositionArray.length;
     for (let i = 0; i < number; i++) {
       images.push(

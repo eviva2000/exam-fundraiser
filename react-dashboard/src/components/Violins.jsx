@@ -4,7 +4,7 @@ import Violin from "../Assets/violin.png";
 export default class Violins extends Component {
   render() {
     let images = [];
-
+    //Filters all donated materials in one array.
     let instrumentArray = this.props.materials.map(
       violins => violins.musicMaterial
     );
@@ -12,7 +12,7 @@ export default class Violins extends Component {
     let violinArray = instrumentArray.filter(
       instrument => instrument === "violins"
     );
-
+    //Use the number of donated materials to create the same number of images.
     let number = violinArray.length;
     for (let i = 0; i < number; i++) {
       images.push(
