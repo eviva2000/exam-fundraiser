@@ -5,6 +5,7 @@ export default class Header extends Component {
     return (
       <div id="header">
         <h1 id="greeting">Hi Admin!</h1>
+        <h1 id="signUp">Create an Admin Account</h1>
         <h1 id="signOut">Sign Out</h1>
       </div>
     );

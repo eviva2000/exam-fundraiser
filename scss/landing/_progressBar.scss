@@ -1,6 +1,7 @@
 #emptyBar {
   position: relative;
-  height: 30px;
+  height: 33px;
+  width: 300px;
   border-radius: 30px;
   border: 2px white solid;
   background: -webkit-linear-gradient(
@@ -11,6 +12,25 @@
     transparent
   );
   background-size: 100%;
-  transition: all 2s;
-  margin: 13%;
+  transition: background-size 2s;
+  margin-top: 13%;
+  #currentSum {
+    line-height: 50px;
+    position: absolute;
+    margin: 0;
+    right: 100%;
+    opacity: 0;
+    font-size: 11pt;
+    color: #1b2440;
+    transition: all 2s;
+  }
+  #goal {
+    position: absolute;
+    color: white;
+    font-size: 11pt;
+    width: 50%;
+    text-align: center;
+    right: -10px;
+    font-weight: 100;
+  }
 }
