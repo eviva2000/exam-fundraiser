@@ -101,9 +101,22 @@ export default class Dashboard extends Component {
   render() {
     if (!this.state.user) {
       return (
-        <form method="get">
-          <input type="email" id="email" name="email" required />
-          <input type="password" id="password" name="password" required />
+        <form>
+          <input
+            required
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email"
+          />
+          <input
+            required
+            type="password"
+            minLength="6"
+            id="password"
+            name="password"
+            placeholder="password"
+          />
           <button type="submit" id="login" onClick={this.authorize}>
             Log In
           </button>
