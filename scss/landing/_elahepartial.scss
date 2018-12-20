@@ -115,12 +115,10 @@ body {
   .pdonators {
     position: relative;
     z-index: 1;
-
     h2 {
       color: $dark-blue-color;
       text-align: center;
       font-size: 1em;
-      background-color: $yellow-color;
       border-top-left-radius: 30px;
       border-top-right-radius: 30px;
       margin: 0;
@@ -138,6 +136,9 @@ body {
       overflow-y: scroll;
       height: 23vh;
       padding-left: 20px;
+    }
+    h2 {
+      background-color: $light-blue;
     }
   }
   .about-campaign {
@@ -312,7 +313,8 @@ body {
       // left: 25%;
       // width: 35%;
       // height: 39px;
-      border: 1px solid white; // border-right: solid 6px #c4c4c4;
+      border: 1px solid white;
+      // border-right: solid 6px #c4c4c4;
       padding: 0 0 0 15px;
     }
     textarea {

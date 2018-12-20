@@ -271,7 +271,10 @@ function progressBar(data) {
     100 * percentRaised + "%";
   //put current amount collected and drag it along with the gradient
   let donatedSumDisplay = document.querySelector("#emptyBar #currentSum");
-  donatedSumDisplay.textContent = totalDonated;
+  if (percentRaised > 10) {
+    donatedSumDisplay.textContent = totalDonated;
+  }
+
   donatedSumDisplay.style.right = 101 - percentRaised + "%";
   //some animation
   donatedSumDisplay.style.opacity = "1";

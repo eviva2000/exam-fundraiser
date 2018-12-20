@@ -28,7 +28,7 @@ img#book {
 
 @mixin h1 {
   text-align: center;
-  font-size: 1.1vw;
+  font-size: 14pt;
 }
 
 @mixin yellowH1 {
@@ -56,7 +56,7 @@ div#dashboard {
   padding: 3vw;
 
   h2 {
-    font-size: 1vw;
+    font-size: 15pt;
   }
   div#header {
     grid-column: 1/7;
@@ -71,7 +71,7 @@ div#dashboard {
     h1#signUp {
       @include h1;
       cursor: pointer;
-      grid-column: 1/3;
+      grid-column: 5/7;
       text-align: right;
     }
     h1#signOut {
@@ -117,6 +117,7 @@ div#dashboard {
   }
   section#totalMoney {
     width: 18vw;
+    min-width: 275px;
     border-radius: 30px;
     border: solid 5px $light-blue;
     color: $light-color;
@@ -133,7 +134,7 @@ div#dashboard {
     }
     h1:nth-child(3) {
       text-align: center;
-      font-size: 2.8vw;
+      font-size: 20pt;
       color: $red;
       margin: 15px auto 50px auto;
     }
@@ -156,12 +157,15 @@ div#dashboard {
     border-radius: 30px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
-    position: absolute;
-    top: 13.5vh;
-    right: 3vw;
+    grid-column: 6;
+    grid-row: 2;
     color: $blue;
     width: 20vw;
-
+    @media screen and(max-width:1450px) {
+      grid-row: 4;
+      grid-column: 1;
+      width: 100%;
+    }
     h1 {
       @include yellowH1;
     }
@@ -192,9 +196,12 @@ div#dashboard {
     width: 19.5vw;
     border-radius: 30px;
     border: solid 5px $light-blue;
-    position: absolute;
-    top: 79vh;
-    right: 3vw;
+    grid-column: 6;
+    @media screen and(max-width:1450px) {
+      grid-column: 2;
+      grid-row: 4;
+      width: 100%;
+    }
 
     h1 {
       @include h1;
@@ -230,6 +237,7 @@ div#dashboard {
 
   section#materialDonations {
     width: 45vw;
+    min-width: 656px;
     border-radius: 30px;
     background-color: $light-color;
     color: $blue;
@@ -259,6 +267,8 @@ div#dashboard {
       width: 20vw;
       margin-left: 25px;
       display: block;
+      position: absolute;
+      z-index: -5;
     }
   }
 }
