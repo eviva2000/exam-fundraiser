@@ -6,7 +6,7 @@ export default class Header extends Component {
       firebase
         .auth()
         .signOut()
-        .then(/* (window.location = "../index.html") */)
+        .then((window.location = "../index.html"))
         .catch(error => {
           console.error("Sign Out Error", error);
         });

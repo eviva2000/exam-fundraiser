@@ -36,14 +36,14 @@ export default class Dashboard extends Component {
     });
     //Here we fetch the data from the external database.
     fetch(
-      "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
+      "https://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
     ).then(res => {
       res.json().then(result => {
         this.setState({ data: result });
       });
     });
     fetch(
-      "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
+      "https://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
     ).then(res => {
       res.json().then(result => {
         this.setState({ materials: result });
@@ -53,14 +53,14 @@ export default class Dashboard extends Component {
       if (this.state.user) {
         // Setting the interval makes sure this state updates and fethes data after the certain interval.
         fetch(
-          "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
+          "https://5bffd9ef0296210013dc7e55.mockapi.io/money-table?fbclid=IwAR0nDnDspJ-j42cP9m2DWn5Fwjr6PRl_EyRaVMYmCXHx8RKBld2Xswe_pOI"
         ).then(res => {
           res.json().then(result => {
             this.setState({ data: result });
           });
         });
         fetch(
-          "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
+          "https://5bffd9ef0296210013dc7e55.mockapi.io/material-table?fbclid=IwAR12fSE5W47qKETdsYW8Ws9T4Xxt9ch1OZ2FqttFwZy3CFl7HdDZfDo9MU0"
         ).then(res => {
           res.json().then(result => {
             this.setState({ materials: result });
@@ -122,7 +122,14 @@ export default class Dashboard extends Component {
           <button type="submit" id="login" onClick={this.authorize}>
             Log In
           </button>
-          <button onClick={window.history.back()}>Go back</button>
+          <button
+            onClick={e => {
+              e.preventDefault();
+              window.history.back();
+            }}
+          >
+            Go back
+          </button>
         </form>
       );
     }
