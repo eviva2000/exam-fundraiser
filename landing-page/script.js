@@ -1,5 +1,6 @@
 "use strict";
-let modal = document.querySelector(".modal");
+let modal1 = document.querySelector(".modal-for-money");
+let modal2 = document.querySelector(".modal-for-material");
 let selectionWrapper = document.querySelector("#selection-wrapper");
 let moneybtn = document.querySelector(".select-money button");
 let moneyContainer = document.querySelector(".money-container");
@@ -7,53 +8,84 @@ let materialContainer = document.querySelector(".material-container");
 let materialbtn = document.querySelector(".select-material button");
 let closeBtn = document.querySelector(".closebtn");
 let closeBtn2 = document.querySelector(".closebtn2");
+let closeBtn3 = document.querySelector(".closebtn3");
+let closeBtn4 = document.querySelector(".closebtn4");
 const additionalLessonForm = document.querySelector("#lessonInput");
 const lessonRadio = document.querySelector("#m4");
 const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
 const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
-let temp = document.querySelector("template").content;
+let temp = document.querySelector(".donators").content;
+let thanksTemp = document.querySelector(".thanks").content;
+let unsortedList1;
+let unsortedList2;
 
-// showing money donation modal //
+// shows money donation modal //
 moneybtn.addEventListener("click", function() {
   moneyContainer.classList.remove("hidden");
+  moneyContainer.classList.remove("close-animation");
+  moneyContainer.classList.add("md-animation");
   moneyContainer.style.display = "flex";
 });
-// closing the money modal
+// closes the money modal
+
 closeBtn.addEventListener("click", function() {
-  moneyContainer.style.display = "none";
+  moneyContainer.classList.remove("md-animation");
+  moneyContainer.classList.add("close-animation");
+  console.log("yess");
 });
-// showing material donation modal //
+
+// shows material donation modal //
 materialbtn.addEventListener("click", function() {
   materialContainer.classList.remove("hidden");
+  materialContainer.classList.remove("close-animation");
+  materialContainer.classList.add("md-animation");
   materialContainer.style.display = "flex";
 });
-// closing the material modal
+// closes the material modal
 closeBtn2.addEventListener("click", function() {
   materialContainer.style.display = "none";
 });
+//closes the the  thank you modal for money
+closeBtn3.addEventListener("click", function() {
+  modal1.classList.add("hidden");
+  moneyContainer.style.display = "none";
+  document.querySelector("#t-heading h2").remove();
 
-// Opens the additional input for lessons when Lesson radiobutton is checked. Closes, if it`s not.
+  // Opens the additional input for lessons when Lesson radiobutton is checked. Closes, if it`s not.
 
-instrumentForm.addEventListener("click", showLessonWindow);
+  instrumentForm.addEventListener("click", showLessonWindow);
 
-function showLessonWindow() {
-  if (lessonRadio.checked) {
-    additionalLessonForm.classList.remove("hidden");
-  } else {
-    additionalLessonForm.classList.add("hidden");
-    document.querySelector('input[name="profile"]').value = "";
-    document.querySelector('input[name="hours"]').value = "";
+  function showLessonWindow() {
+    if (lessonRadio.checked) {
+      additionalLessonForm.classList.remove("hidden");
+    } else {
+      additionalLessonForm.classList.add("hidden");
+      document.querySelector('input[name="profile"]').value = "";
+      document.querySelector('input[name="hours"]').value = "";
+    }
   }
-}
+  fetchEnpoint1();
+});
+//closes the the  thank you modal for material
+closeBtn4.addEventListener("click", function() {
+  modal2.classList.add("hidden");
+  materialContainer.style.display = "none";
+  fetchEnpoint2();
+});
+// Opens the additional input for lessons
+document.querySelector("#m4").addEventListener("click", function() {
+  additionalLessonForm.classList.remove("hidden");
+  console.log("yess");
+});
 
-// ADDING money donation to database//
+// Adds money donation to database//
 let userInfoForm1 = document.querySelector("#userInfoForm1");
 userInfoForm1.addEventListener("submit", e => {
   e.preventDefault();
   addUserInfo1();
-  // modal.style.display = "block";
+  modal1.classList.remove("hidden");
   clearForm();
 });
 function addUserInfo1() {
@@ -84,15 +116,17 @@ function addUserInfo1() {
     }
   })
     .then(res => res.json())
-    .then(d => {});
+    .then(d => {
+      currentDonator(d);
+    });
 }
 
-// ADDING material donation to database//
+// Adds material donation to database//
 let userInfoForm2 = document.querySelector("#userInfoForm2");
 userInfoForm2.addEventListener("submit", e => {
   e.preventDefault();
   addUserInfo2();
-  // modal.style.display = "block";
+  modal2.classList.remove("hidden");
   clearForm();
 });
 function addUserInfo2() {
@@ -120,7 +154,9 @@ function addUserInfo2() {
     }
   })
     .then(res => res.json())
-    .then(d => {});
+    .then(d => {
+      currentDonator2(d);
+    });
 }
 function clearForm() {
   userInfoForm1.elements.name.value = "";
@@ -132,7 +168,7 @@ function clearForm() {
   document.querySelector('input[name="hours"]').value;
 }
 
-//Adding money donators to the corresponding section
+//Adds money donators to the corresponding section
 /// Fetch endpoint (via get method)
 function fetchEnpoint1() {
   fetch(endpoint)
@@ -142,11 +178,33 @@ function fetchEnpoint1() {
       progressBar(res);
     });
 }
+//shows thank you message with the donator name and amount
+function currentDonator(singleDonator) {
+  console.log("singleDonator");
+  let tClone = thanksTemp.cloneNode(true);
+  tClone.querySelector("article h2").textContent = `Dear ${
+    singleDonator.name
+  } thank you for supporting us by donating ${singleDonator.amount} DKK`;
+  document.querySelector(".modal-for-money .thanks-parent").appendChild(tClone);
+}
+//shows thank you message with the donator name and music material
+function currentDonator2(singleDonator) {
+  console.log("singleDonator");
+  let tClone = thanksTemp.cloneNode(true);
+  tClone.querySelector("article h2").textContent = `Dear ${
+    singleDonator.name
+  } thank you for supporting us by donating ${singleDonator.musicMaterial} `;
+  document
+    .querySelector(".modal-for-material .thanks-parent")
+    .appendChild(tClone);
+}
+
 function showDonators(donatorlist) {
-  console.log("donatorlist");
+  //sorts donators by date
+  unsortedList1 = donatorlist;
   donatorlist.sort(function(a, b) {
-    var key1 = a.date;
-    var key2 = b.date;
+    let key1 = a.date;
+    let key2 = b.date;
 
     if (key1 > key2) {
       return -1;
@@ -157,7 +215,7 @@ function showDonators(donatorlist) {
     }
   });
   donatorlist.forEach(donator => {
-    console.log(donator);
+    // console.log(donator);
     let clone = temp.cloneNode(true);
     let myDate = donator.date;
     let newDate = myDate.substr(0, 10);
@@ -165,33 +223,22 @@ function showDonators(donatorlist) {
       donator.amount
     } DK. at ${newDate}`;
 
-    console.log(newDate);
     document.querySelector(".pdonators div").appendChild(clone);
   });
 }
+
 fetchEnpoint1();
 
-//Adding material donators to the corresponding section
+//Adds material donators to the corresponding section
 function addingMaterialDonators() {
   fetch(endpoint2)
     .then(res => res.json())
     .then(showMaterialDonators);
 }
 function showMaterialDonators(donatorlist) {
-  donatorlist.sort(function(a, b) {
-    var key1 = a.date;
-    var key2 = b.date;
-
-    if (key1 > key2) {
-      return -1;
-    } else if (key1 == key2) {
-      return 0;
-    } else {
-      return 1;
-    }
-  });
+  unsortedList2 = donatorlist;
   donatorlist.forEach(donator => {
-    console.log(donator);
+    // console.log(donator);
     let clone = temp.cloneNode(true);
     let myDate = donator.date;
     let newDate = myDate.substr(0, 10);
@@ -202,6 +249,7 @@ function showMaterialDonators(donatorlist) {
     document.querySelector(".pdonators div").appendChild(clone);
   });
 }
+
 addingMaterialDonators();
 
 //Progress bar functions

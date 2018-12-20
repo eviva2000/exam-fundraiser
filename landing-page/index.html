@@ -9,12 +9,40 @@
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
     />
+    <!-- <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon_package_v0.16/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon_package_v0.16/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon_package_v0.16/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="assets/images/favicon_package_v0.16/site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="assets/images/favicon_package_v0.16/safari-pinned-tab.svg"
+      color="#5bbad5"
+    /> -->
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
     <title>Fundraiser-project</title>
   </head>
   <body>
     <header>
       <div class="nav-container">
-        <a href="#">Contact</a> <a href="#">About us</a>
+        <a href="#footer">Contact</a> <a href="#about-us">About us</a>
       </div>
       <div class="login"><a href="#">Login</a></div>
     </header>
@@ -74,13 +102,33 @@
       </section>
     </div>
     <img class="body-img" src="assets/images/saxofone.png" />
-    <!--
-      <div class="modal hidden">
-        <div class="closebtn"><span>&#10005;</span></div>
+    <img class="body-img2" src="assets/images/guitar.png" />
+    <!-- Thank you messages -->
+    <div class="modal-for-money hidden">
+      <div class="closebtn3"><span>&#10005;</span></div>
+      <section class="thanks-parent"></section>
+      <p>
+        You will recieve the receipt in your email<br />
+        plus<strong> 2 free tickets </strong>for our upcomming concert
+      </p>
+    </div>
+    <template class="thanks">
+      <article id="t-heading"><h2></h2></article>
+    </template>
+    <div class="modal-for-material hidden">
+      <div class="closebtn4"><span>&#10005;</span></div>
 
-        <p>Thank you message</p>
-      </div>
-    -->
+      <section class="thanks-parent"></section>
+
+      <p>
+        You will recieve the receipt in your email<br />
+        and the information about how you can proceed over your donation
+      </p>
+      <p>
+        You also recieve <strong>2 free tickets</strong> for our upcomming
+        concert
+      </p>
+    </div>
 
     <section class="money-container hidden">
       <div class="closebtn"><span>&#10005;</span></div>
@@ -144,18 +192,24 @@
           <label>Your name</label> <span class="required">*</span>
           <div class="face">
             <input type="text" name="name" placeholder="Full name" required />
-            <button>smile</button>
+            <button type="submit">
+              <img src="assets/images/fbwhite.png" />
+            </button>
           </div>
         </div>
 
         <div class="input">
           <label>Your email</label> <span class="required">*</span>
-          <input type="email" name="email" placeholder="Email" required />
+          <div class="face">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
           <span class="correct"></span>
         </div>
         <div class="input">
           <label>Leave a comment</label>
-          <textarea placeholder="I donate because ..."></textarea>
+          <div class="face" id="textarea">
+            <textarea placeholder="I donate because ..."></textarea>
+          </div>
         </div>
 
         <input type="submit" name="submit" value="Donate" />
@@ -246,16 +300,25 @@
       <form id="userInfoForm2">
         <div class="input">
           <label>Your name</label> <span class="required">*</span>
-          <input type="text" name="name" placeholder="Full name" required />
+          <div class="face">
+            <input type="text" name="name" placeholder="Full name" required />
+            <button type="submit">
+              <img src="assets/images/fbwhite.png" />
+            </button>
+          </div>
         </div>
 
         <div class="input">
           <label>Your email</label> <span class="required">*</span>
-          <input type="email" name="email" placeholder="Email" required />
+          <div class="face">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
         </div>
         <div class="input">
           <label>Leave a comment</label>
-          <textarea placeholder="I donate because ..."></textarea>
+          <div class="face" id="textarea">
+            <textarea placeholder="I donate because ..."></textarea>
+          </div>
         </div>
 
         <input type="submit" name="submit" value="Donate" />
@@ -271,14 +334,13 @@
       </div>
       <img id="student2" src="assets/images/studen2.PNG" alt="student" />
     </section>
-    <section class="about-us">
-      <img src="assets/images/infograph.png" />
-    </section>
+    <section id="about-us"><img src="assets/images/infograph.png" /></section>
     <template class="donators">
       <article><p></p></article>
     </template>
     <footer>
-      <div class="footer">
+      <h2>Let's get in touch</h2>
+      <div id="footer">
         <a target="_blank" href="https://www.facebook.com/">
           <div class="img-wrapper">
             <img src="assets/images/instagram.png" alt="fb" />
