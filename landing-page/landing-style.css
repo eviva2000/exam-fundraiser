@@ -563,7 +563,7 @@ a:hover {
   transition: background-size 2s;
   margin-top: 13%; }
   #emptyBar #currentSum {
-    line-height: 50px;
+    line-height: 30px;
     position: absolute;
     margin: 0;
     right: 100%;
