@@ -274,7 +274,6 @@ body {
   opacity: 0;
   transition: transform 0.3s;
 }
-
 .closebtn,
 .closebtn2 {
   position: absolute;
@@ -303,20 +302,17 @@ body {
     }
     input,
     textarea {
-<<<<<<< HEAD
       position: absolute;
       left: 25%;
       width: 35%;
       height: 39px;
       border: 1px solid grey;
       // border-right: solid 6px #c4c4c4;
-=======
       // position: absolute;
       // left: 25%;
       // width: 35%;
       // height: 39px;
       border: 1px solid white; // border-right: solid 6px #c4c4c4;
->>>>>>> elahebranch
       padding: 0 0 0 15px;
     }
     textarea {
@@ -420,7 +416,6 @@ header {
   margin-bottom: 15%;
   display: grid;
   color: white;
-  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   .firstpart {
     grid-column: 1/2;
