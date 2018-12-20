@@ -37,7 +37,6 @@ body {
   display: grid;
   grid-template-columns: 1fr; }
   #selection-wrapper .about-campaign,
-  #selection-wrapper .pdonators,
   #selection-wrapper .select-money,
   #selection-wrapper .select-material {
     border: 2px solid #94d3f2;
@@ -52,20 +51,28 @@ body {
   #selection-wrapper .about-campaign,
   #selection-wrapper .pdonators {
     position: relative;
-    z-index: 1;
-    z-index: 100; }
+    z-index: 1; }
     #selection-wrapper .about-campaign h2,
     #selection-wrapper .pdonators h2 {
       color: #1b2440;
       text-align: center;
-      font-size: 1em; }
+      font-size: 1em;
+      background-color: #fcc60e;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin: 0;
+      padding: 20px 0;
+      z-index: 100; }
   #selection-wrapper .pdonators {
-    background: -webkit-linear-gradient(top, #94d3f2, #94d3f2 20%, transparent 1%, transparent); }
+    border: 2px solid #94d3f2;
+    border-radius: 30px;
+    padding-left: 0; }
     #selection-wrapper .pdonators div {
       font-size: 16px;
       font-weight: 100;
-      overflow: scroll;
-      height: 20vh; }
+      overflow-y: scroll;
+      height: 23vh;
+      padding-left: 20px; }
   #selection-wrapper .about-campaign {
     color: #1b2440;
     background: -webkit-linear-gradient(top, #94d3f2, #94d3f2 33%, transparent 1%, transparent);
@@ -117,7 +124,7 @@ body {
         grid-column: 11/17;
         grid-row: 4/10;
         max-height: 36vh;
-        padding-left: 1em; }
+        padding-left: 0em; }
       #selection-wrapper .select-money {
         grid-column: 5/10;
         grid-row: 11/16;

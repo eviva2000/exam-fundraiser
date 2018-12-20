@@ -39,7 +39,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   .about-campaign,
-  .pdonators,
   .select-money,
   .select-material {
     border: 2px solid $light-blue;
@@ -57,26 +56,29 @@ body {
   .pdonators {
     position: relative;
     z-index: 1;
+
     h2 {
       color: $dark-blue-color;
       text-align: center;
       font-size: 1em;
+      background-color: $yellow-color;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin: 0;
+      padding: 20px 0;
+      z-index: 100;
     }
-    z-index: 100;
   }
   .pdonators {
-    background: -webkit-linear-gradient(
-      top,
-      $light-blue,
-      $light-blue 20%,
-      transparent 1%,
-      transparent
-    );
+    border: 2px solid $light-blue;
+    border-radius: 30px;
+    padding-left: 0;
     div {
       font-size: 16px;
       font-weight: 100;
-      overflow: scroll;
-      height: 20vh;
+      overflow-y: scroll;
+      height: 23vh;
+      padding-left: 20px;
     }
   }
   .about-campaign {
@@ -99,7 +101,6 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 5%;
-
     button {
       height: 20px;
       margin-top: 10%;
@@ -148,7 +149,7 @@ body {
       grid-column: 11/17;
       grid-row: 4/10;
       max-height: 36vh;
-      padding-left: 1em;
+      padding-left: 0em;
     }
     .select-money {
       grid-column: 5/10;
@@ -228,7 +229,8 @@ body {
       left: 25%;
       width: 35%;
       height: 39px;
-      border: 1px solid grey; // border-right: solid 6px #c4c4c4;
+      border: 1px solid grey;
+      // border-right: solid 6px #c4c4c4;
       padding: 0 0 0 15px;
     }
     textarea {
@@ -520,7 +522,6 @@ footer {
     z-index: 100;
     color: $light-blue;
   }
-
   img {
     width: 100%;
     border-radius: 30px;

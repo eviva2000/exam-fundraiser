@@ -8,6 +8,7 @@ let materialbtn = document.querySelector(".select-material button");
 let closeBtn = document.querySelector(".closebtn");
 let closeBtn2 = document.querySelector(".closebtn2");
 const additionalLessonForm = document.querySelector("#lessonInput");
+const lessonRadio = document.querySelector("#m4");
 const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
 const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
@@ -22,7 +23,6 @@ moneybtn.addEventListener("click", function() {
 // closing the money modal
 closeBtn.addEventListener("click", function() {
   moneyContainer.style.display = "none";
-  console.log("yess");
 });
 // showing material donation modal //
 materialbtn.addEventListener("click", function() {
@@ -32,14 +32,21 @@ materialbtn.addEventListener("click", function() {
 // closing the material modal
 closeBtn2.addEventListener("click", function() {
   materialContainer.style.display = "none";
-  console.log("yess");
 });
 
-// Opens the additional input for lessons
-document.querySelector("#m4").addEventListener("click", function() {
-  additionalLessonForm.classList.remove("hidden");
-  console.log("yess");
-});
+// Opens the additional input for lessons when Lesson radiobutton is checked. Closes, if it`s not.
+
+instrumentForm.addEventListener("click", showLessonWindow);
+
+function showLessonWindow() {
+  if (lessonRadio.checked) {
+    additionalLessonForm.classList.remove("hidden");
+  } else {
+    additionalLessonForm.classList.add("hidden");
+    document.querySelector('input[name="profile"]').value = "";
+    document.querySelector('input[name="hours"]').value = "";
+  }
+}
 
 // ADDING money donation to database//
 let userInfoForm1 = document.querySelector("#userInfoForm1");
@@ -86,7 +93,7 @@ userInfoForm2.addEventListener("submit", e => {
   e.preventDefault();
   addUserInfo2();
   // modal.style.display = "block";
-  // clearForm();
+  clearForm();
 });
 function addUserInfo2() {
   let comment2 = document.querySelector("#userInfoForm2 textarea").value;
@@ -223,10 +230,4 @@ function progressBar(data) {
   //the goal display
   document.querySelector("#emptyBar #goal").textContent =
     "The Goal: " + goal + " DKK";
-}
-
-if (document.querySelector('input[id="m1"]') == checked) {
-  additionalLessonForm.classList.add("hidden");
-
-  console.log("works");
 }
