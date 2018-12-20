@@ -4,7 +4,7 @@ import Saxophone from "../Assets/saxophone.png";
 class Saxophones extends Component {
   render() {
     let images = [];
-
+    //Filters all donated materials in one array.
     let instrumentArray = this.props.materials.map(
       saxofones => saxofones.musicMaterial
     );
@@ -12,7 +12,7 @@ class Saxophones extends Component {
     let saxofoneArray = instrumentArray.filter(
       instrument => instrument === "saxofone"
     );
-
+    //Use the number of donated materials to create the same number of images.
     let number = saxofoneArray.length;
     for (let i = 0; i < number; i++) {
       images.push(
@@ -24,9 +24,7 @@ class Saxophones extends Component {
         />
       );
     }
-    if (number > 4) {
-      document.querySelectorAll("#saxophones img").height = "10";
-    }
+
     return (
       <div id="saxophones">
         {images}

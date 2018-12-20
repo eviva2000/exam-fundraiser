@@ -32,7 +32,7 @@ export default class ChartTemplate extends Component {
         points: sorted
       }
     ];
-
+    //Create a linechart using following arguments:
     return (
       <div className="App">
         <h1>Daily Money Donated</h1>

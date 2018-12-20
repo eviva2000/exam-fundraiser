@@ -4,6 +4,7 @@ import Saxophones from "./Saxophones.jsx";
 import CompositionBooks from "./CompositionBooks.jsx";
 import Guitars from "./Guitars.jsx";
 
+//Imports all the data of  material donations from children components and passis it back to the parent Dashboard.
 export default class MaterialDonations extends Component {
   render() {
     return (

@@ -11,6 +11,7 @@ let closeBtn2 = document.querySelector(".closebtn2");
 let closeBtn3 = document.querySelector(".closebtn3");
 let closeBtn4 = document.querySelector(".closebtn4");
 const additionalLessonForm = document.querySelector("#lessonInput");
+const lessonRadio = document.querySelector("#m4");
 const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
 const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
@@ -45,7 +46,6 @@ materialbtn.addEventListener("click", function() {
 // closes the material modal
 closeBtn2.addEventListener("click", function() {
   materialContainer.style.display = "none";
-  console.log("yess");
 });
 //closes the the  thank you modal for money
 closeBtn3.addEventListener("click", function() {
@@ -53,6 +53,19 @@ closeBtn3.addEventListener("click", function() {
   moneyContainer.style.display = "none";
   document.querySelector("#t-heading h2").remove();
 
+  // Opens the additional input for lessons when Lesson radiobutton is checked. Closes, if it`s not.
+
+  instrumentForm.addEventListener("click", showLessonWindow);
+
+  function showLessonWindow() {
+    if (lessonRadio.checked) {
+      additionalLessonForm.classList.remove("hidden");
+    } else {
+      additionalLessonForm.classList.add("hidden");
+      document.querySelector('input[name="profile"]').value = "";
+      document.querySelector('input[name="hours"]').value = "";
+    }
+  }
   fetchEnpoint1();
 });
 //closes the the  thank you modal for material
@@ -189,18 +202,18 @@ function currentDonator2(singleDonator) {
 function showDonators(donatorlist) {
   //sorts donators by date
   unsortedList1 = donatorlist;
-  //  donatorlist.sort(function(a, b) {
-  //   let key1 = a.date;
-  //   let key2 = b.date;
+  donatorlist.sort(function(a, b) {
+    let key1 = a.date;
+    let key2 = b.date;
 
-  //   if (key1 > key2) {
-  //     return -1;
-  //   } else if (key1 == key2) {
-  //     return 0;
-  //   } else {
-  //     return 1;
-  //   }
-  // });
+    if (key1 > key2) {
+      return -1;
+    } else if (key1 == key2) {
+      return 0;
+    } else {
+      return 1;
+    }
+  });
   donatorlist.forEach(donator => {
     // console.log(donator);
     let clone = temp.cloneNode(true);
@@ -210,11 +223,9 @@ function showDonators(donatorlist) {
       donator.amount
     } DK. at ${newDate}`;
 
-    // console.log(newDate);
     document.querySelector(".pdonators div").appendChild(clone);
   });
 }
-console.log(unsortedList1);
 
 fetchEnpoint1();
 
@@ -238,9 +249,7 @@ function showMaterialDonators(donatorlist) {
     document.querySelector(".pdonators div").appendChild(clone);
   });
 }
-// Array.prototype.push.apply(unsortedList1, unsortedList2);
-// let allDonators = unsortedList1.concat(unsortedList2);
-console.log(unsortedList1);
+
 addingMaterialDonators();
 
 //Progress bar functions
@@ -270,9 +279,3 @@ function progressBar(data) {
   document.querySelector("#emptyBar #goal").textContent =
     "The Goal: " + goal + " DKK";
 }
-
-// if (document.querySelector('input[id="m1"]') == checked) {
-//   additionalLessonForm.classList.add("hidden");
-
-//   console.log("works");
-// }

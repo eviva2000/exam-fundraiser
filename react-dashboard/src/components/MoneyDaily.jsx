@@ -9,7 +9,7 @@ export default class MoneyDaily extends Component {
       date: item.date.slice(0, 10)
     }));
 
-    //Modifies data using D3 module to be used for creating chart
+    //Modifies data using D3 module to be used for creating a chart.
 
     let properties = d3
       .nest()
@@ -17,7 +17,7 @@ export default class MoneyDaily extends Component {
         return d.date;
       })
 
-      //Sums all donations made in one day
+      //Sums all donations made in one day.
       .rollup(a => {
         return d3.sum(a, d => {
           return d.amount;
