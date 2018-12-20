@@ -1,13 +1,21 @@
+#errorMsg {
+  font-family: "Poppins", sans-serif;
+  color: #fcc60e;
+  text-align: center;
+  height: 50px; }
+
 #signInForm,
 #signUpForm {
   display: grid;
   width: 50vw;
-  max-width: 300px;
+  max-width: 340px;
   margin: 20vh auto; }
   #signInForm input,
   #signUpForm input {
     margin: 15px;
-    font-family: "Poppins", sans-serif; }
+    height: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14pt; }
   #signInForm button,
   #signUpForm button {
     height: 50px;

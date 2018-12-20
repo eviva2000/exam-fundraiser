@@ -93,9 +93,10 @@ export default class Dashboard extends Component {
       .signInWithEmailAndPassword(emailValue, pwdValue)
       .then(res => {
         this.setState({ user: res });
+        document.querySelector("#errorMsg").textContent = "";
       })
       .catch(error => {
-        console.log(error);
+        document.querySelector("#errorMsg").textContent = error;
       });
   }
   //Here we render all the children components.
@@ -104,6 +105,7 @@ export default class Dashboard extends Component {
     if (!this.state.user) {
       return (
         <form id="signInForm">
+          <p id="errorMsg" />
           <input
             required
             type="email"

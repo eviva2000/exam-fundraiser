@@ -16,15 +16,19 @@ export default class SignUpForm extends Component {
         firebase
           .auth()
           .createUserWithEmailAndPassword(email, password2)
-          .then(document.querySelector("#closeBtn").click())
-          .catch(function(error) {
-            console.log(error);
+          .then(() => {
+            document.querySelector("#closeBtn").click();
+            document.querySelector("#errorMsg").textContent = "";
+          })
+          .catch(error => {
+            document.querySelector("#errorMsg").textContent = error;
           });
       }
     }
     return (
       <React.Fragment>
         <form id="signUpForm">
+          <p id="errorMsg" />
           <input
             required
             type="email"

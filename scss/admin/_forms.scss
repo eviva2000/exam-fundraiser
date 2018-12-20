@@ -2,15 +2,23 @@ $yellow-color: #fcc60e;
 $font: "Poppins", sans-serif;
 $dark-blue-color: #1b2440;
 $light-blue: #94d3f2;
+#errorMsg {
+  font-family: $font;
+  color: $yellow-color;
+  text-align: center;
+  height: 50px;
+}
 #signInForm,
 #signUpForm {
   display: grid;
   width: 50vw;
-  max-width: 300px;
+  max-width: 340px;
   margin: 20vh auto;
   input {
     margin: 15px;
+    height: 30px;
     font-family: $font;
+    font-size: 14pt;
   }
   button {
     height: 50px;

@@ -1,7 +1,6 @@
 {
   "name": "admin-dashboard",
   "version": "0.1.0",
-  /* "homepage": "https://rtsdr.com/test3/admin", */
   "private": true,
   "dependencies": {
     "d3": "^5.7.0",
