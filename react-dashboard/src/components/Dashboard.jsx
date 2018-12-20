@@ -87,6 +87,7 @@ export default class Dashboard extends Component {
     e.preventDefault();
     let emailValue = document.getElementById("email").value;
     let pwdValue = document.getElementById("password").value;
+
     firebase
       .auth()
       .signInWithEmailAndPassword(emailValue, pwdValue)
@@ -99,9 +100,10 @@ export default class Dashboard extends Component {
   }
   //Here we render all the children components.
   render() {
+    //return a log in form if no user found
     if (!this.state.user) {
       return (
-        <form>
+        <form id="signInForm">
           <input
             required
             type="email"
@@ -120,12 +122,15 @@ export default class Dashboard extends Component {
           <button type="submit" id="login" onClick={this.authorize}>
             Log In
           </button>
+          <button onClick={window.history.back()}>Go back</button>
         </form>
       );
     }
+    //if sign up is selected return sign up form
     if (this.state.createAccount) {
       return <SignUpForm status={this.signUpStatus} />;
     } else {
+      //else return the dashboard
       return (
         <div id="dashboard">
           <Header status={this.signUpStatus} />
