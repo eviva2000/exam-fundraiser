@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Book from "../Assets/book.png";
+import Book from "../Assets/book.jpg";
 
 export default class CompositionBooks extends Component {
   render() {

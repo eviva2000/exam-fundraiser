@@ -279,7 +279,6 @@ body {
   opacity: 0;
   transition: transform 0.3s;
 }
-
 .closebtn,
 .closebtn2 {
   position: absolute;
@@ -413,7 +412,6 @@ header {
   margin-bottom: 15%;
   display: grid;
   color: white;
-  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   .firstpart {
     grid-column: 1/2;
