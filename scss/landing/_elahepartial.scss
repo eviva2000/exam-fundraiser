@@ -307,17 +307,7 @@ body {
     }
     input,
     textarea {
-      position: absolute;
-      left: 25%;
-      width: 35%;
-      height: 39px;
-      border: 1px solid grey;
-      // border-right: solid 6px #c4c4c4;
-      // position: absolute;
-      // left: 25%;
-      // width: 35%; // height: 39px;
-      border: 1px solid white; // border-right: solid 6px #c4c4c4;
-      padding: 0 0 0 15px;
+      border: white solid 1px;
     }
     textarea {
       top: 5em;

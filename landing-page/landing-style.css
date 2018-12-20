@@ -269,13 +269,7 @@ body {
     #userInfoForm1 .input textarea,
     #userInfoForm2 .input input,
     #userInfoForm2 .input textarea {
-      position: absolute;
-      left: 25%;
-      width: 35%;
-      height: 39px;
-      border: 1px solid grey;
-      border: 1px solid white;
-      padding: 0 0 0 15px; }
+      border: white solid 1px; }
     #userInfoForm1 .input textarea,
     #userInfoForm2 .input textarea {
       top: 5em; }
