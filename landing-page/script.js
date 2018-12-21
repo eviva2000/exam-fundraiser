@@ -221,7 +221,7 @@ function showDonators(donatorlist) {
     let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.amount
-    } DK. at ${newDate}`;
+    } DKK on ${newDate}`;
 
     document.querySelector(".pdonators div").appendChild(clone);
   });
@@ -244,7 +244,7 @@ function showMaterialDonators(donatorlist) {
     let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.musicMaterial
-    } at ${newDate}`;
+    } on ${newDate}`;
 
     document.querySelector(".pdonators div").appendChild(clone);
   });
