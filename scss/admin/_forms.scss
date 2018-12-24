@@ -1,0 +1,40 @@
+$yellow-color: #fcc60e;
+$font: "Poppins", sans-serif;
+$dark-blue-color: #1b2440;
+$light-blue: #94d3f2;
+#errorMsg {
+  font-family: $font;
+  color: $yellow-color;
+  text-align: center;
+  height: 50px;
+}
+#signInForm,
+#signUpForm {
+  display: grid;
+  width: 50vw;
+  max-width: 340px;
+  margin: 20vh auto;
+  input {
+    margin: 15px;
+    height: 30px;
+    font-family: $font;
+    font-size: 14pt;
+  }
+  button {
+    height: 50px;
+    margin: 30px auto 0;
+    cursor: pointer;
+    border-radius: 2em;
+    border: 2px solid $yellow-color;
+    font-family: $font;
+    color: $dark-blue-color;
+    height: 50px;
+    width: 180px;
+    border-radius: 2em;
+    font-size: 1em;
+    background-color: $yellow-color;
+    &:hover {
+      background-color: $light-blue;
+    }
+  }
+}

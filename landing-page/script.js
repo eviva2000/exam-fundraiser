@@ -12,8 +12,8 @@ let closeBtn3 = document.querySelector(".closebtn3");
 let closeBtn4 = document.querySelector(".closebtn4");
 const additionalLessonForm = document.querySelector("#lessonInput");
 const lessonRadio = document.querySelector("#m4");
-const endpoint = "http://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
-const endpoint2 = "http://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
+const endpoint = "https://5bffd9ef0296210013dc7e55.mockapi.io/money-table";
+const endpoint2 = "https://5bffd9ef0296210013dc7e55.mockapi.io/material-table";
 let moneyForm = document.querySelector("#moneydonation");
 let instrumentForm = document.querySelector("#instrumentdonation");
 let temp = document.querySelector(".donators").content;
@@ -222,7 +222,7 @@ function showDonators(donatorlist) {
     let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.amount
-    } DK. at ${newDate}`;
+    } DKK on ${newDate}`;
 
     document.querySelector(".pdonators div").appendChild(clone);
   });
@@ -245,7 +245,7 @@ function showMaterialDonators(donatorlist) {
     let newDate = myDate.substr(0, 10);
     clone.querySelector("article p").textContent = `${donator.name} donates ${
       donator.musicMaterial
-    } at ${newDate}`;
+    } on ${newDate}`;
 
     document.querySelector(".pdonators div").appendChild(clone);
   });
@@ -272,7 +272,10 @@ function progressBar(data) {
     100 * percentRaised + "%";
   //put current amount collected and drag it along with the gradient
   let donatedSumDisplay = document.querySelector("#emptyBar #currentSum");
-  donatedSumDisplay.textContent = totalDonated;
+  if (percentRaised > 10) {
+    donatedSumDisplay.textContent = totalDonated;
+  }
+
   donatedSumDisplay.style.right = 101 - percentRaised + "%";
   //some animation
   donatedSumDisplay.style.opacity = "1";

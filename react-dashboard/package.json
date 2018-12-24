@@ -1,5 +1,6 @@
 {
   "name": "admin-dashboard",
+  "homepage": "https://rtsdr.com/kea/09/fundraiser/admin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

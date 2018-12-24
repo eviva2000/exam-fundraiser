@@ -1,3 +1,39 @@
+#errorMsg {
+  font-family: "Poppins", sans-serif;
+  color: #fcc60e;
+  text-align: center;
+  height: 50px; }
+
+#signInForm,
+#signUpForm {
+  display: grid;
+  width: 50vw;
+  max-width: 340px;
+  margin: 20vh auto; }
+  #signInForm input,
+  #signUpForm input {
+    margin: 15px;
+    height: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14pt; }
+  #signInForm button,
+  #signUpForm button {
+    height: 50px;
+    margin: 30px auto 0;
+    cursor: pointer;
+    border-radius: 2em;
+    border: 2px solid #fcc60e;
+    font-family: "Poppins", sans-serif;
+    color: #1b2440;
+    height: 50px;
+    width: 180px;
+    border-radius: 2em;
+    font-size: 1em;
+    background-color: #fcc60e; }
+    #signInForm button:hover,
+    #signUpForm button:hover {
+      background-color: #94d3f2; }
+
 img#book {
   border: solid 2px black; }
 
@@ -16,7 +52,7 @@ div#dashboard {
   color: #ffffff;
   padding: 3vw; }
   div#dashboard h2 {
-    font-size: 1vw; }
+    font-size: 15pt; }
   div#dashboard div#header {
     grid-column: 1/7;
     grid-row: 1;
@@ -25,17 +61,17 @@ div#dashboard {
     grid-template-columns: repeat(6, 1fr); }
     div#dashboard div#header h1#greeting {
       text-align: center;
-      font-size: 1.1vw;
+      font-size: 14pt;
       text-align: left; }
     div#dashboard div#header h1#signUp {
       text-align: center;
-      font-size: 1.1vw;
+      font-size: 14pt;
       cursor: pointer;
-      grid-column: 2;
+      grid-column: 5/7;
       text-align: right; }
     div#dashboard div#header h1#signOut {
       text-align: center;
-      font-size: 1.1vw;
+      font-size: 14pt;
       cursor: pointer;
       grid-column: 6;
       text-align: right; }
@@ -54,7 +90,7 @@ div#dashboard {
       margin: 0;
       padding: 20px 15px;
       text-align: center;
-      font-size: 1.1vw;
+      font-size: 14pt;
       color: #1b2440; }
     div#dashboard section#moneyDaily div.App div:nth-child(2) svg {
       padding-left: 20px; }
@@ -66,6 +102,7 @@ div#dashboard {
         stroke-width: 5; }
   div#dashboard section#totalMoney {
     width: 18vw;
+    min-width: 275px;
     border-radius: 30px;
     border: solid 5px #94d3f2;
     color: #ffffff;
@@ -77,11 +114,11 @@ div#dashboard {
       display: block; }
     div#dashboard section#totalMoney h1:nth-child(2) {
       text-align: center;
-      font-size: 1.1vw;
+      font-size: 14pt;
       margin: 15px auto 5px auto; }
     div#dashboard section#totalMoney h1:nth-child(3) {
       text-align: center;
-      font-size: 2.8vw;
+      font-size: 20pt;
       color: #de2235;
       margin: 15px auto 50px auto; }
     div#dashboard section#totalMoney h2 {
@@ -98,11 +135,15 @@ div#dashboard {
     border-radius: 30px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
-    position: absolute;
-    top: 13.5vh;
-    right: 3vw;
+    grid-column: 6;
+    grid-row: 2;
     color: #1b2440;
     width: 20vw; }
+    @media screen and (max-width: 1450px) {
+      div#dashboard section#donators {
+        grid-row: 4;
+        grid-column: 1;
+        width: 100%; } }
     div#dashboard section#donators h1 {
       background-color: #fcc60e;
       border-top-left-radius: 30px;
@@ -110,7 +151,7 @@ div#dashboard {
       margin: 0;
       padding: 20px 15px;
       text-align: center;
-      font-size: 1.1vw; }
+      font-size: 14pt; }
     div#dashboard section#donators ul {
       display: -ms-grid;
       display: grid;
@@ -131,12 +172,15 @@ div#dashboard {
     width: 19.5vw;
     border-radius: 30px;
     border: solid 5px #94d3f2;
-    position: absolute;
-    top: 79vh;
-    right: 3vw; }
+    grid-column: 6; }
+    @media screen and (max-width: 1450px) {
+      div#dashboard section#lessons {
+        grid-column: 2;
+        grid-row: 4;
+        width: 100%; } }
     div#dashboard section#lessons h1 {
       text-align: center;
-      font-size: 1.1vw;
+      font-size: 14pt;
       padding: 15px; }
       div#dashboard section#lessons h1 span {
         color: #de2235; }
@@ -158,6 +202,7 @@ div#dashboard {
           margin: 0; }
   div#dashboard section#materialDonations {
     width: 45vw;
+    min-width: 656px;
     border-radius: 30px;
     background-color: #ffffff;
     color: #1b2440;
@@ -171,7 +216,7 @@ div#dashboard {
       margin: 0;
       padding: 20px 15px;
       text-align: center;
-      font-size: 1.1vw; }
+      font-size: 14pt; }
     div#dashboard section#materialDonations div#container {
       margin-top: 50px;
       display: -ms-grid;
@@ -187,4 +232,6 @@ div#dashboard {
     div#dashboard div#notes2 img {
       width: 20vw;
       margin-left: 25px;
-      display: block; }
+      display: block;
+      position: absolute;
+      z-index: -5; }
