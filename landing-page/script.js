@@ -86,6 +86,7 @@ userInfoForm1.addEventListener("submit", e => {
   e.preventDefault();
   addUserInfo1();
   modal1.classList.remove("hidden");
+  modal1.classList.add("md-animation");
   clearForm();
 });
 function addUserInfo1() {
