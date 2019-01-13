@@ -1,4 +1,11 @@
 "use strict";
+window.onload = function() {
+  let f1 = document.getElementById("f1"),
+    f2 = document.getElementById("f2"),
+    f3 = document.getElementById("f3");
+
+  TweenMax.staggerFrom([f3, f1, f2], 1, { y: 1100, ease: Back.easeOut }, 0.4);
+};
 let modal1 = document.querySelector(".modal-for-money");
 let modal2 = document.querySelector(".modal-for-material");
 let selectionWrapper = document.querySelector("#selection-wrapper");
@@ -86,6 +93,7 @@ userInfoForm1.addEventListener("submit", e => {
   e.preventDefault();
   addUserInfo1();
   modal1.classList.remove("hidden");
+  modal1.classList.add("md-animation");
   clearForm();
 });
 function addUserInfo1() {
@@ -127,6 +135,7 @@ userInfoForm2.addEventListener("submit", e => {
   e.preventDefault();
   addUserInfo2();
   modal2.classList.remove("hidden");
+  modal2.classList.add("md-animation");
   clearForm();
 });
 function addUserInfo2() {

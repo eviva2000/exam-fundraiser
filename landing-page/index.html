@@ -39,14 +39,17 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#1b2440" />
     <title>Jazz Now!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   </head>
   <body>
     <header>
       <div class="nav-container">
         <a href="#footer">Contact</a> <a href="#about-us">About us</a>
+        <a href="#the-impact">How we work</a>
       </div>
       <div class="login"><a href="admin/index.html">Login</a></div>
     </header>
+
     <section class="firstpage-container">
       <div class="firstpart">
         <img id="title" src="assets/images/the name.png" alt="title" />
@@ -61,7 +64,12 @@
           <a href="#selection-wrapper">About this campaign</a>
         </div>
       </div>
-      <div class="secondpart"><img src="assets/images/mainpic.png" /></div>
+      <div class="secondpart">
+        <img id="f1" src="assets/images/f1.png" />
+        <img id="f2" src="assets/images/f2.png" />
+        <img id="f3" src="assets/images/f3.png" />
+        <img id="mainpic" src="assets/images/mainpic.png" />
+      </div>
       <div class="thirdpart">
         <h2>Progress to our goal</h2>
         <section id="progress-section">
@@ -73,7 +81,7 @@
         <img src="assets/images/note withoutlines.png" />
       </div>
     </section>
-
+    <button id="up" onclick="topFunction()">&#8963;</button>
     <div id="selection-wrapper">
       <img src="assets/images/note3.png" />
       <section class="about-campaign">
@@ -91,26 +99,50 @@
           material and professional support. Help us learn and enjoy music!
         </p>
       </section>
-      <section class="pdonators">
-        <h2>Our Supporters</h2>
-        <div></div>
-      </section>
+
       <section class="select-money"><button>Donate Money</button></section>
       <section class="select-material">
         <button>Donate Materials</button>
+      </section>
+      <section class="pdonators">
+        <h2>Our Supporters</h2>
+        <div></div>
       </section>
     </div>
     <img class="body-img" src="assets/images/saxofone.png" />
     <img class="body-img2" src="assets/images/guitar.png" />
     <!-- Thank you messages -->
-    <div class="modal-for-money hidden">
+
+    <div class="modal-for-money hidden" id="modal-container">
+      <div class="modal-background">
+        <div class="modal">
+          <section class="thanks-parent"></section>
+          <p>
+            You will recieve the receipt in your email<br />
+            plus<strong> 2 free tickets </strong>for our upcomming concert
+          </p>
+          <svg
+            class="modal-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="none"
+          >
+            <rect
+              x="0"
+              y="0"
+              fill="none"
+              width="226"
+              height="162"
+              rx="3"
+              ry="3"
+            ></rect>
+          </svg>
+        </div>
+      </div>
       <div class="closebtn3"><span>&#10005;</span></div>
-      <section class="thanks-parent"></section>
-      <p>
-        You will recieve the receipt in your email<br />
-        plus<strong> 2 free tickets </strong>for our upcomming concert
-      </p>
     </div>
+
     <template class="thanks">
       <article id="t-heading"><h2></h2></article>
     </template>
@@ -143,6 +175,9 @@
             checked
           />
           <label for="a1"><span class="radio">100 DKK</span> </label>
+          <p>
+            gives <strong> elementary class</strong> foundational music skills.
+          </p>
         </div>
         <div class="amount-selection">
           <input
@@ -154,6 +189,9 @@
             id="a2"
           />
           <label for="a2"><span class="radio">200 DKK</span> </label>
+          <p>
+            gives <strong> 1 student</strong> the chance to play in JazzNow!
+          </p>
         </div>
         <div class="amount-selection">
           <input
@@ -165,6 +203,7 @@
             id="a3"
           />
           <label for="a3"><span class="radio">400 DKK</span> </label>
+          <p>gives our band access to a high-quality piano</p>
         </div>
         <div class="amount-selection">
           <input
@@ -323,13 +362,27 @@
         <input type="submit" name="submit" value="Donate" />
       </form>
     </section>
-    <section class="the-impact">
-      <img id="student1" src="assets/images/studen.PNG" alt="studen" />
+    <section id="the-impact">
+      <img id="student1" src="assets/images/s3.png" alt="student" />
+
       <div class="container1">
-        <h2>Help us explore our talents in music.</h2>
+        <h2>1.YOU INVEST IN OUR BAND</h2>
+        <p>
+          you donate instruments, music technology and other equipment to help
+          us continue growing
+        </p>
+        <button>Read more about donations</button>
       </div>
-      <div class="container2"><h2>With your help we can improve!</h2></div>
-      <img id="student2" src="assets/images/studen2.PNG" alt="student" />
+      <img id="student2" src="assets/images/s4.png" alt="student" />
+
+      <div class="container2">
+        <h2>2.YOU SUPPORT TEACHERS</h2>
+        <p>
+          You support music teachers with professional development, ongoing
+          program support and other resources.
+        </p>
+        <button>Read more about teachers</button>
+      </div>
     </section>
     <section id="about-us"><img src="assets/images/infograph.png" /></section>
     <template class="donators">
@@ -338,28 +391,57 @@
     <footer>
       <h2>Let's get in touch</h2>
       <div id="footer">
-        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
-          <div class="img-wrapper">
-            <img src="assets/images/instagram.png" alt="fb" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
-          <div class="img-wrapper">
-            <img src="assets/images/fbwhite.png" alt="fb" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
-          <div class="img-wrapper">
-            <img src="assets/images/twitter.png" alt="fb" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
-          <div class="img-wrapper">
-            <img src="assets/images/mail.png" alt="fb" />
-          </div>
-        </a>
+        <div class="social">
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+            <div class="img-wrapper">
+              <img src="assets/images/fbwhite.png" alt="fb" />
+            </div>
+          </a>
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+            <div class="img-wrapper">
+              <img src="assets/images/instagram.png" alt="fb" />
+            </div>
+          </a>
+
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+            <div class="img-wrapper">
+              <img src="assets/images/twitter.png" alt="fb" />
+            </div>
+          </a>
+        </div>
+        <div class="address">
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+            <div class="img-wrapper">
+              <img src="assets/images/mail.png" alt="fb" />
+            </div>
+          </a>
+          <p>skolgade 34 , 2300 Copenhagen <br />Tlf: 22549071</p>
+        </div>
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      // When the user scrolls down 500px from the top of the document, show the button
+      window.onscroll = function() {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 500 ||
+          document.documentElement.scrollTop > 500
+        ) {
+          document.getElementById("up").style.display = "block";
+        } else {
+          document.getElementById("up").style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
   </body>
 </html>
