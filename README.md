@@ -94,4 +94,4 @@ To publish and track your new branch remotely:
 $ git push -u origin mybranchname
 ```
 
-Add or ask to add anything else that you find relevant, fix spelling errors or clarify stuff.
+
